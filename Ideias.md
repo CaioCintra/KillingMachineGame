@@ -2,15 +2,15 @@
 
 - Killing Machine
 
-Integrantes:
+## Integrantes:
 
-## James Osbourne - Vocals
+James Osbourne - Vocals - Unico que pode apertar botões
 
-Daron Gates - Guitar
+Daron Gates - Guitar - Quebrar paredes de vidro
 
-Vic Williams - Bass
+Vic Williams - Bass - Agachar
 
-Josh Peart - Drums
+Josh Peart - Drums - Não toma dano, bate nos inimigos
 
 ## Jogo inspiração:
 
@@ -28,3 +28,11 @@ Josh Peart - Drums
 - Botões
 - Escadas
 - Portais
+
+## Fases:
+
+1 - Deserto
+2 - Gelo
+3 - Natureza
+4 - Cidade
+5 - Mundo Metal
