@@ -31,8 +31,8 @@ Josh Peart - Drums - Não toma dano, bate nos inimigos
 
 ## Fases:
 
-1 - Deserto
-2 - Gelo
-3 - Natureza
-4 - Cidade
-5 - Mundo Metal
+1 - Deserto;
+2 - Natureza;
+3 - Gelo;
+4 - Cidade;
+5 - Mundo Metal;
