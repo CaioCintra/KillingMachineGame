@@ -17,6 +17,7 @@ Josh Peart - Drums - Não toma dano, bate nos inimigos
  - Parado que atira
  - Que anda e bate
  - Parede de laser/fogo
+ - Espinhos (ou algo do tipo) no chão
 
    ### Todos os inimigos dão insta-kill (Exceto no Josh, que não toma dano)
 
@@ -36,6 +37,12 @@ Josh Peart - Drums - Não toma dano, bate nos inimigos
 - Botões
 - Escadas
 - Portais
+
+## Itens:
+
+ - Chave
+ - Pulo maior
+ - Escudo (Deixa invencível)
 
 ## Fases:
 
