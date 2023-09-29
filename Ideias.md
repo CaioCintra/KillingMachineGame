@@ -12,6 +12,14 @@ Vic Williams - Bass - Agachar
 
 Josh Peart - Drums - Não toma dano, bate nos inimigos
 
+## Inimigos:
+
+ - Parado que atira
+ - Que anda e bate
+ - Parede de laser/fogo
+
+   ### Todos os inimigos dão insta-kill (Exceto no Josh, que não toma dano)
+
 ## Jogo inspiração:
 
 - Pesonagem que não pode pular
