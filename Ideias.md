@@ -18,6 +18,7 @@ Josh Peart - Drums - Não toma dano, bate nos inimigos
  - Que anda e bate
  - Parede de laser/fogo
  - Espinhos (ou algo do tipo) no chão
+ - Inimigo imortal
 
    ### Todos os inimigos dão insta-kill (Exceto no Josh, que não toma dano)
 
