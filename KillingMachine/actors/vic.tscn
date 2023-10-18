@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://djsek6qe3bni"]
+
+[ext_resource type="Script" path="res://levels/scripts/Vic.gd" id="1_sl84u"]
+[ext_resource type="Texture2D" uid="uid://o0lauifov6bu" path="res://assets/Sprites/Personagens/Vic-idle.png" id="2_6n7up"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ssxf"]
+atlas = ExtResource("2_6n7up")
+region = Rect2(0, 0, 50, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42cv4"]
+atlas = ExtResource("2_6n7up")
+region = Rect2(50, 0, 50, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8u8no"]
+atlas = ExtResource("2_6n7up")
+region = Rect2(100, 0, 50, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4i5v"]
+atlas = ExtResource("2_6n7up")
+region = Rect2(150, 0, 50, 55)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_03bjq"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_2ssxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42cv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8u8no")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4i5v")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cq631"]
+size = Vector2(49, 54)
+
+[node name="Vic" type="CharacterBody2D"]
+position = Vector2(3, -28)
+script = ExtResource("1_sl84u")
+
+[node name="Animacao" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_03bjq")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_cq631")
+one_way_collision_margin = 0.0
+
+[node name="Camera" type="Camera2D" parent="."]
+limit_left = 0
+limit_bottom = 0
+limit_smoothed = true
+position_smoothing_enabled = true
