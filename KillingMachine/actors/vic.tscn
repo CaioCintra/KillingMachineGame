@@ -1,38 +1,38 @@
 [gd_scene load_steps=9 format=3 uid="uid://djsek6qe3bni"]
 
 [ext_resource type="Script" path="res://levels/scripts/Vic.gd" id="1_sl84u"]
-[ext_resource type="Texture2D" uid="uid://o0lauifov6bu" path="res://assets/Sprites/Personagens/Vic-idle.png" id="2_6n7up"]
+[ext_resource type="Texture2D" uid="uid://sodr46rpq1yn" path="res://assets/Sprites/Personagens/Vic/Vic-idle.png" id="2_jl4gc"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2ssxf"]
-atlas = ExtResource("2_6n7up")
+[sub_resource type="AtlasTexture" id="AtlasTexture_mseic"]
+atlas = ExtResource("2_jl4gc")
 region = Rect2(0, 0, 50, 55)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_42cv4"]
-atlas = ExtResource("2_6n7up")
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3x07"]
+atlas = ExtResource("2_jl4gc")
 region = Rect2(50, 0, 50, 55)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8u8no"]
-atlas = ExtResource("2_6n7up")
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2ulc"]
+atlas = ExtResource("2_jl4gc")
 region = Rect2(100, 0, 50, 55)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e4i5v"]
-atlas = ExtResource("2_6n7up")
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4atr"]
+atlas = ExtResource("2_jl4gc")
 region = Rect2(150, 0, 50, 55)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_03bjq"]
 animations = [{
 "frames": [{
 "duration": 5.0,
-"texture": SubResource("AtlasTexture_2ssxf")
+"texture": SubResource("AtlasTexture_mseic")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_42cv4")
+"texture": SubResource("AtlasTexture_m3x07")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8u8no")
+"texture": SubResource("AtlasTexture_v2ulc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_e4i5v")
+"texture": SubResource("AtlasTexture_j4atr")
 }],
 "loop": true,
 "name": &"Idle",
@@ -51,6 +51,7 @@ position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_03bjq")
 animation = &"Idle"
 autoplay = "Idle"
+frame_progress = 0.46466
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 1)
