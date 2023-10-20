@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mus146nbrq8f"
-path="res://.godot/imported/Daron-jump.png-61d8141b3cb784981c1dd70a2f5d6a5d.ctex"
+uid="uid://j6koe0662qt2"
+path="res://.godot/imported/Josh-run.png-f8d50d7b7773457d554ec45860df0874.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Personagens/Daron/Daron-jump.png"
-dest_files=["res://.godot/imported/Daron-jump.png-61d8141b3cb784981c1dd70a2f5d6a5d.ctex"]
+source_file="res://assets/Sprites/Personagens/Josh/Josh-run.png"
+dest_files=["res://.godot/imported/Josh-run.png-f8d50d7b7773457d554ec45860df0874.ctex"]
 
 [params]
 

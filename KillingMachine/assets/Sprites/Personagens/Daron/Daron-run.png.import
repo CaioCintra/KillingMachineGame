@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mus146nbrq8f"
-path="res://.godot/imported/Daron-jump.png-61d8141b3cb784981c1dd70a2f5d6a5d.ctex"
+uid="uid://gwyl4pbrt1rp"
+path="res://.godot/imported/Daron-run.png-d6cf9f86f9edec2ecc5ba8789bf5545e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Personagens/Daron/Daron-jump.png"
-dest_files=["res://.godot/imported/Daron-jump.png-61d8141b3cb784981c1dd70a2f5d6a5d.ctex"]
+source_file="res://assets/Sprites/Personagens/Daron/Daron-run.png"
+dest_files=["res://.godot/imported/Daron-run.png-d6cf9f86f9edec2ecc5ba8789bf5545e.ctex"]
 
 [params]
 
