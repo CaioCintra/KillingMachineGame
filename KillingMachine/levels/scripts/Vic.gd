@@ -31,8 +31,11 @@ func _physics_process(delta):
 		animation.scale.x = direction
 		if !is_jumping:
 			animation.play("run")
+		else:
+			animation.play("jump")					
 	elif is_jumping:
 		animation.play("jump")					
+		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		animation.play("idle")

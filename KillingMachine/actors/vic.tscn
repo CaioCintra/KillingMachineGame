@@ -101,6 +101,7 @@ shape = SubResource("RectangleShape2D_cq631")
 one_way_collision_margin = 0.0
 
 [node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 limit_left = 0
 limit_bottom = 0
 limit_smoothed = true
