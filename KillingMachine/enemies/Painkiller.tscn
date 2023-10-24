@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://ca75m0romvagn"]
+
+[ext_resource type="Texture2D" uid="uid://dvarwhi8b0qv5" path="res://assets/Sprites/Inimigos/Painkiller.png" id="1_loiys"]
+[ext_resource type="PackedScene" uid="uid://d2elklk2278d6" path="res://enemies/hitbox.tscn" id="2_rgevq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_figri"]
+atlas = ExtResource("1_loiys")
+region = Rect2(0, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8bem"]
+atlas = ExtResource("1_loiys")
+region = Rect2(40, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lq21"]
+atlas = ExtResource("1_loiys")
+region = Rect2(80, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yofw"]
+atlas = ExtResource("1_loiys")
+region = Rect2(120, 0, 40, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dl5ho"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_figri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8bem")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_3lq21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yofw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxwxe"]
+size = Vector2(39, 59)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2lfvy"]
+radius = 18.0
+height = 58.0
+
+[node name="Painkiller" type="CharacterBody2D"]
+collision_layer = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dl5ho")
+autoplay = "default"
+frame_progress = 0.472636
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_gxwxe")
+
+[node name="animacao" type="AnimationPlayer" parent="."]
+
+[node name="hitbox" parent="." instance=ExtResource("2_rgevq")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+visible = false
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_2lfvy")
+debug_color = Color(0.996078, 0, 0.172549, 0.419608)

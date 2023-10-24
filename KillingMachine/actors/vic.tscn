@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://djsek6qe3bni"]
+[gd_scene load_steps=18 format=3 uid="uid://djsek6qe3bni"]
 
 [ext_resource type="Script" path="res://levels/scripts/Vic.gd" id="1_sl84u"]
 [ext_resource type="Texture2D" uid="uid://dr6wbx8iwbbwe" path="res://assets/Sprites/Personagens/Vic/Vic-idle.png" id="2_jl4gc"]
+[ext_resource type="Texture2D" uid="uid://bmo4h7qkbcarl" path="res://assets/Sprites/Personagens/Vic/Vic-hurt.png" id="2_nj0jn"]
 [ext_resource type="Texture2D" uid="uid://iu7pixy1uc1u" path="res://assets/Sprites/Personagens/Vic/Vic-jump.png" id="3_a2eta"]
 [ext_resource type="Texture2D" uid="uid://da5x62gkhdk1" path="res://assets/Sprites/Personagens/Vic/Vic-run.png" id="4_xrbj3"]
 [ext_resource type="PackedScene" uid="uid://b5v6g2vnmjgq5" path="res://actors/hurtbox.tscn" id="5_sh2tj"]
@@ -40,6 +41,14 @@ region = Rect2(150, 0, 50, 55)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_03bjq"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nj0jn")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 5.0,
 "texture": SubResource("AtlasTexture_mseic")
@@ -97,7 +106,7 @@ script = ExtResource("1_sl84u")
 [node name="anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_03bjq")
-animation = &"run"
+animation = &"hurt"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

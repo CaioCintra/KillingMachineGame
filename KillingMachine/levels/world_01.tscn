@@ -1,6 +1,7 @@
-[gd_scene load_steps=30 format=3 uid="uid://cpkkgg5qca5a7"]
+[gd_scene load_steps=32 format=3 uid="uid://cpkkgg5qca5a7"]
 
 [ext_resource type="Texture2D" uid="uid://dml5cbrxm8bbd" path="res://assets/Sprites/Mapa/Deserto/Canto.png" id="1_427jj"]
+[ext_resource type="Script" path="res://levels/scripts/world_01.gd" id="1_cwr74"]
 [ext_resource type="Texture2D" uid="uid://csuq6xvsms305" path="res://assets/Sprites/Mapa/Deserto/Cenario 1.png" id="2_iioho"]
 [ext_resource type="Texture2D" uid="uid://ce52q56k7vbwp" path="res://assets/Sprites/Mapa/Deserto/Chao.png" id="2_ouhbu"]
 [ext_resource type="Texture2D" uid="uid://cubc3ey8sa1so" path="res://assets/Sprites/Mapa/Deserto/Parede.png" id="4_afuf7"]
@@ -16,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://djn2jpfrcmtmo" path="res://assets/Sprites/Mapa/Deserto/Parallax/Nuvens.png" id="13_07ylu"]
 [ext_resource type="Texture2D" uid="uid://cybrwllytx8e3" path="res://assets/Sprites/Mapa/Deserto/Parallax/Parallax1.png" id="13_jmnu5"]
 [ext_resource type="PackedScene" uid="uid://1rmjwq4bllbr" path="res://enemies/espinho.tscn" id="16_7ivqm"]
+[ext_resource type="PackedScene" uid="uid://ca75m0romvagn" path="res://enemies/Painkiller.tscn" id="18_jwhps"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t7bbx"]
 texture = ExtResource("1_427jj")
@@ -755,9 +757,10 @@ shader_parameter/move_speed = 0.05
 
 [node name="World-01" type="Node2D"]
 position = Vector2(302, 294)
+script = ExtResource("1_cwr74")
 
 [node name="level" type="TileMap" parent="."]
-position = Vector2(-242, -334)
+position = Vector2(-259, -334)
 tile_set = SubResource("TileSet_xdaeg")
 format = 2
 layer_0/name = "Ground"
@@ -832,3 +835,6 @@ position = Vector2(647, -421)
 
 [node name="Espinho4" parent="." instance=ExtResource("16_7ivqm")]
 position = Vector2(680, -421)
+
+[node name="Painkiller" parent="." instance=ExtResource("18_jwhps")]
+position = Vector2(356, -354)
