@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://djsek6qe3bni"]
+[gd_scene load_steps=17 format=3 uid="uid://djsek6qe3bni"]
 
 [ext_resource type="Script" path="res://levels/scripts/Vic.gd" id="1_sl84u"]
 [ext_resource type="Texture2D" uid="uid://dr6wbx8iwbbwe" path="res://assets/Sprites/Personagens/Vic/Vic-idle.png" id="2_jl4gc"]
 [ext_resource type="Texture2D" uid="uid://iu7pixy1uc1u" path="res://assets/Sprites/Personagens/Vic/Vic-jump.png" id="3_a2eta"]
 [ext_resource type="Texture2D" uid="uid://da5x62gkhdk1" path="res://assets/Sprites/Personagens/Vic/Vic-run.png" id="4_xrbj3"]
+[ext_resource type="PackedScene" uid="uid://b5v6g2vnmjgq5" path="res://actors/hurtbox.tscn" id="5_sh2tj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mseic"]
 atlas = ExtResource("2_jl4gc")
@@ -85,8 +86,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cq631"]
 size = Vector2(49, 54)
 
-[node name="Vic" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnhwc"]
+size = Vector2(25, 54)
+
+[node name="Vic" type="CharacterBody2D" groups=["players"]]
 position = Vector2(3, -28)
+collision_mask = 22
 script = ExtResource("1_sl84u")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
@@ -108,3 +113,10 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="animacao" type="AnimationPlayer" parent="."]
+
+[node name="hurtbox" parent="." instance=ExtResource("5_sh2tj")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(-2.5, 1)
+shape = SubResource("RectangleShape2D_nnhwc")
+debug_color = Color(1, 0, 0.137255, 0.419608)
