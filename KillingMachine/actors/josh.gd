@@ -5,7 +5,6 @@ const JUMP_VELOCITY = -430.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_jumping := false
-var isHurt := false
 var ativo = false
 
 @onready var animation := $anim as AnimatedSprite2D
@@ -41,10 +40,7 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			animation.play("idle")
 	else:
-		animation.play("idle")
-		velocity.x = 0		
-			
-	if isHurt:
-		animation.play("hurt")
-
+		animation.play("idle")		
+		velocity.x = 0
+		
 	move_and_slide()

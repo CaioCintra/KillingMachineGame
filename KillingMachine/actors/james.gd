@@ -42,7 +42,7 @@ func _physics_process(delta):
 			animation.play("idle")
 	else:
 		animation.play("idle")
-		velocity.x = 0		
+		velocity.x = 0	
 			
 	if isHurt:
 		animation.play("hurt")

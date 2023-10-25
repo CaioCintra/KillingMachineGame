@@ -100,14 +100,16 @@ size = Vector2(25, 54)
 
 [node name="Vic" type="CharacterBody2D" groups=["players"]]
 position = Vector2(3, -28)
-collision_mask = 22
+collision_mask = 18
 script = ExtResource("1_sl84u")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_03bjq")
-animation = &"hurt"
+animation = &"run"
 autoplay = "idle"
+frame = 2
+frame_progress = 0.164147
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 1)

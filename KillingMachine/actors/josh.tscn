@@ -1,0 +1,114 @@
+[gd_scene load_steps=18 format=3 uid="uid://duktwpbivke4r"]
+
+[ext_resource type="Script" path="res://actors/josh.gd" id="1_q3u4m"]
+[ext_resource type="Texture2D" uid="uid://bk7bhtnifgvh3" path="res://assets/Sprites/Personagens/Josh/Josh-idle.png" id="2_dv8nn"]
+[ext_resource type="PackedScene" uid="uid://b5v6g2vnmjgq5" path="res://actors/hurtbox.tscn" id="2_tyjn3"]
+[ext_resource type="Texture2D" uid="uid://dve4rfjjbgnpw" path="res://assets/Sprites/Personagens/Josh/Josh-jump.png" id="3_fr66y"]
+[ext_resource type="Texture2D" uid="uid://j6koe0662qt2" path="res://assets/Sprites/Personagens/Josh/Josh-run.png" id="4_yxhco"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpqvu"]
+size = Vector2(33, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12fau"]
+atlas = ExtResource("2_dv8nn")
+region = Rect2(0, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24oxr"]
+atlas = ExtResource("2_dv8nn")
+region = Rect2(40, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngsdi"]
+atlas = ExtResource("2_dv8nn")
+region = Rect2(80, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j34x"]
+atlas = ExtResource("2_dv8nn")
+region = Rect2(120, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ruwhm"]
+atlas = ExtResource("3_fr66y")
+region = Rect2(0, 0, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfcdg"]
+atlas = ExtResource("4_yxhco")
+region = Rect2(0, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0motv"]
+atlas = ExtResource("4_yxhco")
+region = Rect2(40, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0omg0"]
+atlas = ExtResource("4_yxhco")
+region = Rect2(80, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5gii"]
+atlas = ExtResource("4_yxhco")
+region = Rect2(120, 0, 40, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jmq43"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_12fau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24oxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngsdi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j34x")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ruwhm")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfcdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0motv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0omg0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5gii")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydihk"]
+size = Vector2(31, 60)
+
+[node name="Josh" type="CharacterBody2D" groups=["players"]]
+collision_mask = 18
+script = ExtResource("1_q3u4m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_lpqvu")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jmq43")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="hurtbox" parent="." instance=ExtResource("2_tyjn3")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_ydihk")
+debug_color = Color(0.988235, 0, 0.282353, 0.419608)

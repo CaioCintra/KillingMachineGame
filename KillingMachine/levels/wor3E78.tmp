@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cpkkgg5qca5a7"]
+[gd_scene load_steps=32 format=3 uid="uid://cpkkgg5qca5a7"]
 
 [ext_resource type="Texture2D" uid="uid://dml5cbrxm8bbd" path="res://assets/Sprites/Mapa/Deserto/Canto.png" id="1_427jj"]
 [ext_resource type="Script" path="res://levels/scripts/world_01.gd" id="1_cwr74"]
@@ -11,14 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://khsx50echkdl" path="res://assets/Sprites/Mapa/Deserto/Meio2.png" id="7_x1og7"]
 [ext_resource type="Texture2D" uid="uid://b7mm5laobw8bs" path="res://assets/Sprites/Mapa/Deserto/Meio.png" id="8_jt2u5"]
 [ext_resource type="Texture2D" uid="uid://dw2paydssmuid" path="res://assets/Sprites/Mapa/Deserto/Meio1.png" id="9_lrf0g"]
-[ext_resource type="PackedScene" uid="uid://bcy860xhx6e1r" path="res://actors/james.tscn" id="11_mwtoj"]
 [ext_resource type="Texture2D" uid="uid://dhp6d8vc55vwa" path="res://assets/Sprites/Mapa/Deserto/Parallax/Parallax3.png" id="11_nq1c6"]
-[ext_resource type="PackedScene" uid="uid://kjek5fvr5fch" path="res://actors/daron.tscn" id="11_sjcj0"]
 [ext_resource type="Texture2D" uid="uid://by0pnueeaah1i" path="res://assets/Sprites/Mapa/Deserto/Parallax/Parallax2.png" id="12_ca1ms"]
 [ext_resource type="Shader" path="res://levels/shaders/nuvens.gdshader" id="12_hxdto"]
 [ext_resource type="Texture2D" uid="uid://djn2jpfrcmtmo" path="res://assets/Sprites/Mapa/Deserto/Parallax/Nuvens.png" id="13_07ylu"]
 [ext_resource type="Texture2D" uid="uid://cybrwllytx8e3" path="res://assets/Sprites/Mapa/Deserto/Parallax/Parallax1.png" id="13_jmnu5"]
-[ext_resource type="PackedScene" uid="uid://duktwpbivke4r" path="res://actors/josh.tscn" id="14_a42mm"]
 [ext_resource type="PackedScene" uid="uid://1rmjwq4bllbr" path="res://enemies/espinho.tscn" id="16_7ivqm"]
 [ext_resource type="PackedScene" uid="uid://ca75m0romvagn" path="res://enemies/Painkiller.tscn" id="18_jwhps"]
 
@@ -777,18 +774,9 @@ layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(-131045, 2, 0, -1769404, 2, 0, -2752508, 2, 0, -2752425, 2, 0)
 
-[node name="Daron" parent="." instance=ExtResource("11_sjcj0")]
-position = Vector2(-144, -357)
-
 [node name="Vic" parent="." instance=ExtResource("4_eq6je")]
-position = Vector2(-190, -353)
+position = Vector2(-276, -355)
 collision_mask = 2
-
-[node name="James" parent="." instance=ExtResource("11_mwtoj")]
-position = Vector2(-103, -355)
-
-[node name="Josh" parent="." instance=ExtResource("14_a42mm")]
-position = Vector2(-231, -354)
 
 [node name="Parede invisivel" type="StaticBody2D" parent="."]
 collision_layer = 2
