@@ -87,7 +87,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydihk"]
@@ -103,7 +103,7 @@ shape = SubResource("RectangleShape2D_lpqvu")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jmq43")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
 
 [node name="hurtbox" parent="." instance=ExtResource("2_tyjn3")]

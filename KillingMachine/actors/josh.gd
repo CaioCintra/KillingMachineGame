@@ -25,7 +25,7 @@ func _physics_process(delta):
 			is_jumping = true
 	
 		# Get the input direction and handle the movement/deceleration.
-		var direction = Input.get_axis("ui_left", "ui_right")
+		var direction = round(Input.get_axis("ui_left", "ui_right"))
 		
 		if direction != 0:
 			velocity.x = direction * SPEED
