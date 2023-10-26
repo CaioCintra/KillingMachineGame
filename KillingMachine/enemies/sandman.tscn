@@ -1,0 +1,99 @@
+[gd_scene load_steps=15 format=3 uid="uid://ollhsjfir2ir"]
+
+[ext_resource type="Script" path="res://enemies/sandman.gd" id="1_7oisx"]
+[ext_resource type="Texture2D" uid="uid://fdpohnw4umnx" path="res://assets/Sprites/Inimigos/Sandman.png" id="1_pj4wt"]
+[ext_resource type="PackedScene" uid="uid://d2elklk2278d6" path="res://enemies/hitbox.tscn" id="2_fvnkf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1iq31"]
+atlas = ExtResource("1_pj4wt")
+region = Rect2(200, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17nal"]
+atlas = ExtResource("1_pj4wt")
+region = Rect2(240, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bunxv"]
+atlas = ExtResource("1_pj4wt")
+region = Rect2(280, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hw2b"]
+atlas = ExtResource("1_pj4wt")
+region = Rect2(0, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ui48o"]
+atlas = ExtResource("1_pj4wt")
+region = Rect2(40, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt7o7"]
+atlas = ExtResource("1_pj4wt")
+region = Rect2(80, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h67oj"]
+atlas = ExtResource("1_pj4wt")
+region = Rect2(120, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_leflp"]
+atlas = ExtResource("1_pj4wt")
+region = Rect2(160, 0, 40, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0cj8x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1iq31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17nal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bunxv")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_5hw2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ui48o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt7o7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h67oj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_leflp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uu6ig"]
+size = Vector2(29, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v87gg"]
+size = Vector2(38, 59)
+
+[node name="Sandman" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_7oisx")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0cj8x")
+autoplay = "default"
+frame_progress = 0.828946
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_uu6ig")
+
+[node name="hitbox" parent="." instance=ExtResource("2_fvnkf")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_v87gg")
+debug_color = Color(1, 0, 0.0980392, 0.419608)
+
+[node name="Tiro" type="Marker2D" parent="."]
+position = Vector2(-293, -294)

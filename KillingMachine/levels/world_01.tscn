@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cpkkgg5qca5a7"]
+[gd_scene load_steps=36 format=3 uid="uid://cpkkgg5qca5a7"]
 
 [ext_resource type="Texture2D" uid="uid://dml5cbrxm8bbd" path="res://assets/Sprites/Mapa/Deserto/Canto.png" id="1_427jj"]
 [ext_resource type="Script" path="res://levels/scripts/world_01.gd" id="1_cwr74"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://duktwpbivke4r" path="res://actors/josh.tscn" id="14_a42mm"]
 [ext_resource type="PackedScene" uid="uid://1rmjwq4bllbr" path="res://enemies/espinho.tscn" id="16_7ivqm"]
 [ext_resource type="PackedScene" uid="uid://ca75m0romvagn" path="res://enemies/Painkiller.tscn" id="18_jwhps"]
+[ext_resource type="PackedScene" uid="uid://ollhsjfir2ir" path="res://enemies/sandman.tscn" id="22_b2ql2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t7bbx"]
 texture = ExtResource("1_427jj")
@@ -850,3 +851,9 @@ position = Vector2(680, -421)
 
 [node name="Painkiller" parent="." instance=ExtResource("18_jwhps")]
 position = Vector2(356, -354)
+
+[node name="Sandman" parent="." instance=ExtResource("22_b2ql2")]
+position = Vector2(-257, -754)
+
+[node name="Sandman2" parent="." instance=ExtResource("22_b2ql2")]
+position = Vector2(-259, -514)
