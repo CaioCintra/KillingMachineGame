@@ -1,9 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2elklk2278d6"]
+[gd_scene load_steps=3 format=3 uid="uid://d2elklk2278d6"]
 
 [ext_resource type="Script" path="res://hitbox.gd" id="1_e0chc"]
+[ext_resource type="AudioStream" uid="uid://bwm7bx3kvcmk4" path="res://SFX/Damage.mp3" id="2_oja02"]
 
 [node name="hitbox" type="Area2D"]
 collision_layer = 16
 script = ExtResource("1_e0chc")
+
+[node name="sound_damage" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_oja02")
+volume_db = -20.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

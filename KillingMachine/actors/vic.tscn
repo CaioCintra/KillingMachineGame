@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://djsek6qe3bni"]
+[gd_scene load_steps=19 format=3 uid="uid://djsek6qe3bni"]
 
 [ext_resource type="Script" path="res://levels/scripts/Vic.gd" id="1_sl84u"]
 [ext_resource type="Texture2D" uid="uid://dr6wbx8iwbbwe" path="res://assets/Sprites/Personagens/Vic/Vic-idle.png" id="2_jl4gc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://iu7pixy1uc1u" path="res://assets/Sprites/Personagens/Vic/Vic-jump.png" id="3_a2eta"]
 [ext_resource type="Texture2D" uid="uid://da5x62gkhdk1" path="res://assets/Sprites/Personagens/Vic/Vic-run.png" id="4_xrbj3"]
 [ext_resource type="PackedScene" uid="uid://b5v6g2vnmjgq5" path="res://actors/hurtbox.tscn" id="5_sh2tj"]
+[ext_resource type="AudioStream" uid="uid://berbuyj6bm1nw" path="res://SFX/jump.mp3" id="7_l0d5k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mseic"]
 atlas = ExtResource("2_jl4gc")
@@ -131,3 +132,7 @@ position_smoothing_enabled = true
 position = Vector2(-2.5, 1)
 shape = SubResource("RectangleShape2D_nnhwc")
 debug_color = Color(1, 0, 0.137255, 0.419608)
+
+[node name="sound_jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_l0d5k")
+volume_db = -20.0

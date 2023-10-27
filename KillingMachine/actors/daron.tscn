@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://kjek5fvr5fch"]
+[gd_scene load_steps=19 format=3 uid="uid://kjek5fvr5fch"]
 
 [ext_resource type="Texture2D" uid="uid://ch5vfwkqhixtv" path="res://assets/Sprites/Personagens/Daron/Daron-hurt.png" id="1_muq2t"]
 [ext_resource type="Script" path="res://actors/daron.gd" id="1_ymvmp"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://mus146nbrq8f" path="res://assets/Sprites/Personagens/Daron/Daron-jump.png" id="3_6rh6c"]
 [ext_resource type="Texture2D" uid="uid://gwyl4pbrt1rp" path="res://assets/Sprites/Personagens/Daron/Daron-run.png" id="4_67qxu"]
 [ext_resource type="PackedScene" uid="uid://b5v6g2vnmjgq5" path="res://actors/hurtbox.tscn" id="5_uy5gk"]
+[ext_resource type="AudioStream" uid="uid://berbuyj6bm1nw" path="res://SFX/jump.mp3" id="7_5d81f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ejmg"]
 atlas = ExtResource("2_wf0hi")
@@ -118,3 +119,7 @@ shape = SubResource("RectangleShape2D_aywqi")
 position = Vector2(-3.5, 1)
 shape = SubResource("RectangleShape2D_ydihk")
 debug_color = Color(0.988235, 0, 0.282353, 0.419608)
+
+[node name="sound_jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_5d81f")
+volume_db = -20.0

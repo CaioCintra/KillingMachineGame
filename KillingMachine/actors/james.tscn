@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bcy860xhx6e1r"]
+[gd_scene load_steps=19 format=3 uid="uid://bcy860xhx6e1r"]
 
 [ext_resource type="Script" path="res://actors/james.gd" id="1_ysjsi"]
 [ext_resource type="Texture2D" uid="uid://dg8eh3wyxyebh" path="res://assets/Sprites/Personagens/James/James-hurt.png" id="2_crvn8"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bvgm2llnsfeh5" path="res://assets/Sprites/Personagens/James/James-jump.png" id="4_pjc21"]
 [ext_resource type="PackedScene" uid="uid://b5v6g2vnmjgq5" path="res://actors/hurtbox.tscn" id="5_1gslp"]
 [ext_resource type="Texture2D" uid="uid://cgh7q4cchfgp5" path="res://assets/Sprites/Personagens/James/James-run.png" id="5_lolac"]
+[ext_resource type="AudioStream" uid="uid://berbuyj6bm1nw" path="res://SFX/jump.mp3" id="7_1hor7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mo1p8"]
 atlas = ExtResource("3_qav73")
@@ -128,3 +129,7 @@ position_smoothing_enabled = true
 position = Vector2(0, 0.75)
 shape = SubResource("RectangleShape2D_krmkk")
 debug_color = Color(0.988235, 0, 0.286275, 0.419608)
+
+[node name="sound_jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_1hor7")
+volume_db = -20.0

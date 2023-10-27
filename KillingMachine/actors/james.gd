@@ -23,6 +23,7 @@ func _physics_process(delta):
 		# Handle Jump.
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
+			$sound_jump.play()
 			is_jumping = true
 	
 		# Get the input direction and handle the movement/deceleration.
