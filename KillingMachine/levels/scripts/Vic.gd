@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
+var SPEED = 300.0
 const JUMP_VELOCITY = -430.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_jumping := false
 var isHurt := false
+var isDucking := false
+var isRunning := false
 var ativo = false
 
 @onready var animation := $anim as AnimatedSprite2D
@@ -21,31 +23,56 @@ func _physics_process(delta):
 	
 	if ativo:
 		# Handle Jump.
-		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			isDucking = false
 			velocity.y = JUMP_VELOCITY
 			$sound_jump.play()
 			is_jumping = true
+	
+		if Input.is_action_just_pressed("power") and is_on_floor():
+			isDucking = !isDucking
 	
 		# Get the input direction and handle the movement/deceleration.
 		var direction = round(Input.get_axis("ui_left", "ui_right"))
 		
 		if direction != 0:
+			isRunning = true
 			velocity.x = direction * SPEED
 			animation.scale.x = direction
 			if !is_jumping:
-				animation.play("run")
+				if !isDucking:
+					animation.play("run")
+				else:
+					animation.play("duck-run")
 			else:
 				animation.play("jump")                    
 		elif is_jumping:
 			animation.play("jump")                    
 		else:
+			isRunning = false
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			animation.play("idle")
 	else:
+		isRunning = false		
 		animation.play("idle")
 		velocity.x = 0		
 			
 	if isHurt:
 		animation.play("hurt")
+		
+	if isDucking and !isRunning:
+		animation.play("duck")
+		
+		
+	if !isDucking:
+		SPEED = 300.0
+		$CollisionShape2D.disabled = false
+		$hurtbox/CollisionHurt.disabled = false
+		$hurtbox/CollisionDuckHit.disabled = true
+	else:
+		SPEED = 100.0
+		$CollisionShape2D.disabled = true
+		$hurtbox/CollisionHurt.disabled = true
+		$hurtbox/CollisionDuckHit.disabled = false
 
 	move_and_slide()
