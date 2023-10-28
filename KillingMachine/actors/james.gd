@@ -21,6 +21,7 @@ func _physics_process(delta):
 		_double_jump = false
 	
 	if ativo:
+		$Camera.make_current()
 		# Handle Jump.
 		if (Input.is_action_just_pressed("jump") or Input.is_action_just_pressed("power")) and (is_on_floor() or not _double_jump):
 			velocity.y = JUMP_VELOCITY

@@ -117,3 +117,15 @@ debug_color = Color(0.988235, 0, 0.282353, 0.419608)
 [node name="sound_jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_ugh35")
 volume_db = -20.0
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_bottom = 0
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(25, 0)
+collision_mask = 4
+hit_from_inside = true

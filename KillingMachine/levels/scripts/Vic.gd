@@ -8,7 +8,10 @@ var is_jumping := false
 var isHurt := false
 var isDucking := false
 var isRunning := false
+var blockAbove := false
 var ativo = false
+
+
 
 @onready var animation := $anim as AnimatedSprite2D
 @onready var remote_transform := $remote as RemoteTransform2D
@@ -22,6 +25,7 @@ func _physics_process(delta):
 		is_jumping = false
 	
 	if ativo:
+		$Camera.make_current()
 		# Handle Jump.
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			isDucking = false
@@ -29,7 +33,7 @@ func _physics_process(delta):
 			$sound_jump.play()
 			is_jumping = true
 	
-		if Input.is_action_just_pressed("power") and is_on_floor():
+		if Input.is_action_just_pressed("power") and is_on_floor() and !blockAbove:
 			isDucking = !isDucking
 	
 		# Get the input direction and handle the movement/deceleration.
@@ -74,5 +78,10 @@ func _physics_process(delta):
 		$CollisionShape2D.disabled = true
 		$hurtbox/CollisionHurt.disabled = true
 		$hurtbox/CollisionDuckHit.disabled = false
+		
+	if $RayCast2D.get_collider():
+		blockAbove = true
+	else:
+		blockAbove = false
 
 	move_and_slide()

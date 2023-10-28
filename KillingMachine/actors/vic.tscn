@@ -178,3 +178,7 @@ debug_color = Color(0.815686, 0.407843, 0, 0.419608)
 [node name="sound_jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_l0d5k")
 volume_db = -20.0
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, -20)
+hit_from_inside = true
