@@ -5,9 +5,9 @@ var personagens = []
 var personagemAtual = 0
 
 func _ready():
-	personagens.append(get_node("Vic"))
 	personagens.append(get_node("James"))
 	personagens.append(get_node("Daron"))
+	personagens.append(get_node("Vic"))
 	personagens.append(get_node("Josh"))
 
 	for i in range(personagens.size()):
