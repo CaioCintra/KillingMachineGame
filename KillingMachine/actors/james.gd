@@ -40,9 +40,15 @@ func _physics_process(delta):
 			if !is_jumping:
 				animation.play("run")
 			else:
-				animation.play("jump")                    
+				if !_double_jump:
+					animation.play("jump")
+				else:
+					animation.play("doublejump")                     
 		elif is_jumping:
-			animation.play("jump")                    
+			if !_double_jump:
+				animation.play("jump")
+			else:
+				animation.play("doublejump")                    
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			animation.play("idle")

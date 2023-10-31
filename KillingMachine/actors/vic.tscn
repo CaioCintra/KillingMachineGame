@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://djsek6qe3bni"]
+[gd_scene load_steps=26 format=3 uid="uid://djsek6qe3bni"]
 
 [ext_resource type="Script" path="res://levels/scripts/Vic.gd" id="1_sl84u"]
 [ext_resource type="Texture2D" uid="uid://dr6wbx8iwbbwe" path="res://assets/Sprites/Personagens/Vic/Vic-idle.png" id="2_jl4gc"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://da5x62gkhdk1" path="res://assets/Sprites/Personagens/Vic/Vic-run.png" id="4_xrbj3"]
 [ext_resource type="PackedScene" uid="uid://b5v6g2vnmjgq5" path="res://actors/hurtbox.tscn" id="5_sh2tj"]
 [ext_resource type="AudioStream" uid="uid://berbuyj6bm1nw" path="res://SFX/jump.mp3" id="7_l0d5k"]
+[ext_resource type="Texture2D" uid="uid://535beu2ev2tu" path="res://assets/Sprites/Personagens/Indicador.png" id="10_6ttyq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8rrcu"]
 atlas = ExtResource("3_2gwwk")
@@ -142,7 +143,7 @@ script = ExtResource("1_sl84u")
 [node name="anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_03bjq")
-animation = &"duck-run"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -182,3 +183,7 @@ volume_db = -20.0
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, -20)
 hit_from_inside = true
+
+[node name="Indicador" type="Sprite2D" parent="."]
+position = Vector2(0, -35)
+texture = ExtResource("10_6ttyq")

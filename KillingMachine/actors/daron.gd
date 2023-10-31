@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -430.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_jumping := false
 var isHurt := false
+var isAttaking := false
 var ativo = false
 
 @onready var animation := $anim as AnimatedSprite2D
@@ -26,6 +27,15 @@ func _physics_process(delta):
 			velocity.y = JUMP_VELOCITY
 			$sound_jump.play()
 			is_jumping = true
+			
+		elif Input.is_action_just_pressed("power"):
+			isAttaking = true
+			var porta = $RayCast2D.get_collider()
+			if porta != null:
+				if (porta.name == "PortaVidro") :
+					porta.queue_free()
+			await get_tree().create_timer(0.3).timeout
+			isAttaking = false
 	
 		# Get the input direction and handle the movement/deceleration.
 		var direction = round(Input.get_axis("ui_left", "ui_right"))
@@ -41,7 +51,10 @@ func _physics_process(delta):
 			animation.play("jump")                    
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
-			animation.play("idle")
+			if !isAttaking:
+				animation.play("idle")
+			else:
+				animation.play("jump")
 	else:
 		animation.play("idle")
 		velocity.x = 0		

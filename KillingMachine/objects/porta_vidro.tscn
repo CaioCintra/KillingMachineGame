@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://co8wq2iosoj3m"]
+
+[ext_resource type="Texture2D" uid="uid://dg7spa1u845qm" path="res://assets/Sprites/Portas/Porta-Vidro.png" id="1_ndm4h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxyo5"]
+size = Vector2(30, 58)
+
+[node name="PortaVidro" type="RigidBody2D" groups=["doors"]]
+collision_layer = 8
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_ndm4h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_mxyo5")

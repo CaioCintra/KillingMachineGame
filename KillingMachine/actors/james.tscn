@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bcy860xhx6e1r"]
+[gd_scene load_steps=21 format=3 uid="uid://bcy860xhx6e1r"]
 
 [ext_resource type="Script" path="res://actors/james.gd" id="1_ysjsi"]
 [ext_resource type="Texture2D" uid="uid://dexordhoxcqh0" path="res://assets/Sprites/Personagens/James/James-doublejump.png" id="2_3amxh"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b5v6g2vnmjgq5" path="res://actors/hurtbox.tscn" id="5_1gslp"]
 [ext_resource type="Texture2D" uid="uid://cgh7q4cchfgp5" path="res://assets/Sprites/Personagens/James/James-run.png" id="5_lolac"]
 [ext_resource type="AudioStream" uid="uid://berbuyj6bm1nw" path="res://SFX/jump.mp3" id="7_1hor7"]
+[ext_resource type="Texture2D" uid="uid://535beu2ev2tu" path="res://assets/Sprites/Personagens/Indicador.png" id="9_tyihg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mo1p8"]
 atlas = ExtResource("3_qav73")
@@ -44,7 +45,7 @@ region = Rect2(96, 0, 32, 60)
 [sub_resource type="SpriteFrames" id="SpriteFrames_o1w2r"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 3.0,
 "texture": ExtResource("2_3amxh")
 }],
 "loop": true,
@@ -115,7 +116,7 @@ script = ExtResource("1_ysjsi")
 [node name="anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_o1w2r")
-animation = &"doublejump"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -142,3 +143,7 @@ debug_color = Color(0.988235, 0, 0.286275, 0.419608)
 [node name="sound_jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_1hor7")
 volume_db = -20.0
+
+[node name="Indicador" type="Sprite2D" parent="."]
+position = Vector2(0, -35)
+texture = ExtResource("9_tyihg")
