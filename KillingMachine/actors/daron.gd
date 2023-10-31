@@ -20,11 +20,12 @@ func _physics_process(delta):
 	if is_on_floor():
 		is_jumping = false
 	
+	$Indicador.visible = ativo
+	
 	if ativo:
-		$Camera.make_current()		
-		$Indicador.visible = true
-		await get_tree().create_timer(1).timeout
-		$Indicador.visible = false
+		$Camera.make_current()
+				
+		$Indicador.play("default")
 		# Handle Jump.
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
@@ -33,11 +34,12 @@ func _physics_process(delta):
 			
 		elif Input.is_action_just_pressed("power"):
 			isAttaking = true
+			$sound_attack.play()
 			var porta = $RayCast2D.get_collider()
 			if porta != null:
 				if (porta.name == "PortaVidro") :
 					porta.queue_free()
-			await get_tree().create_timer(0.3).timeout
+			await get_tree().create_timer(0.8).timeout
 			isAttaking = false
 	
 		# Get the input direction and handle the movement/deceleration.
@@ -57,7 +59,7 @@ func _physics_process(delta):
 			if !isAttaking:
 				animation.play("idle")
 			else:
-				animation.play("jump")
+				animation.play("attack")
 	else:
 		animation.play("idle")
 		velocity.x = 0		
