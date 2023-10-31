@@ -145,5 +145,6 @@ stream = ExtResource("7_1hor7")
 volume_db = -20.0
 
 [node name="Indicador" type="Sprite2D" parent="."]
-position = Vector2(0, -35)
+visible = false
+position = Vector2(1, -35)
 texture = ExtResource("9_tyihg")

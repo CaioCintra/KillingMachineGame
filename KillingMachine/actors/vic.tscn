@@ -185,5 +185,6 @@ target_position = Vector2(0, -20)
 hit_from_inside = true
 
 [node name="Indicador" type="Sprite2D" parent="."]
-position = Vector2(0, -35)
+visible = false
+position = Vector2(-3, -35)
 texture = ExtResource("10_6ttyq")

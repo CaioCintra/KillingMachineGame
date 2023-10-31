@@ -138,5 +138,6 @@ collision_mask = 8
 hit_from_inside = true
 
 [node name="Indicador" type="Sprite2D" parent="."]
-position = Vector2(0, -41)
+visible = false
+position = Vector2(-1, -41)
 texture = ExtResource("8_fxung")
