@@ -142,7 +142,7 @@ script = ExtResource("1_sl84u")
 [node name="anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_03bjq")
-animation = &"duck-run"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

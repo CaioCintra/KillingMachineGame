@@ -115,7 +115,7 @@ script = ExtResource("1_ysjsi")
 [node name="anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_o1w2r")
-animation = &"doublejump"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
