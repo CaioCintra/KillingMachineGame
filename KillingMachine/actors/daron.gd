@@ -30,9 +30,10 @@ func _physics_process(delta):
 			
 		elif Input.is_action_just_pressed("power"):
 			isAttaking = true
-			var inimigo = $RayCast2D.get_collider()
-			if (inimigo != null) :
-				inimigo.queue_free()
+			var porta = $RayCast2D.get_collider()
+			if porta != null:
+				if (porta.name == "PortaVidro") :
+					porta.queue_free()
 			await get_tree().create_timer(0.3).timeout
 			isAttaking = false
 	
