@@ -1,6 +1,7 @@
 # No script do mundo
 extends Node
 
+var carrinhu = true
 var personagens = []
 var personagemAtual = 0
 
