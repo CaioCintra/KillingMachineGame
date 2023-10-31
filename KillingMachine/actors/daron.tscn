@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://kjek5fvr5fch"]
+[gd_scene load_steps=20 format=3 uid="uid://kjek5fvr5fch"]
 
 [ext_resource type="Texture2D" uid="uid://ch5vfwkqhixtv" path="res://assets/Sprites/Personagens/Daron/Daron-hurt.png" id="1_muq2t"]
 [ext_resource type="Script" path="res://actors/daron.gd" id="1_ymvmp"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://gwyl4pbrt1rp" path="res://assets/Sprites/Personagens/Daron/Daron-run.png" id="4_67qxu"]
 [ext_resource type="PackedScene" uid="uid://b5v6g2vnmjgq5" path="res://actors/hurtbox.tscn" id="5_uy5gk"]
 [ext_resource type="AudioStream" uid="uid://berbuyj6bm1nw" path="res://SFX/jump.mp3" id="7_5d81f"]
+[ext_resource type="Texture2D" uid="uid://535beu2ev2tu" path="res://assets/Sprites/Personagens/Indicador.png" id="8_fxung"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ejmg"]
 atlas = ExtResource("2_wf0hi")
@@ -135,3 +136,7 @@ position_smoothing_enabled = true
 target_position = Vector2(66, 0)
 collision_mask = 8
 hit_from_inside = true
+
+[node name="Indicador" type="Sprite2D" parent="."]
+position = Vector2(0, -41)
+texture = ExtResource("8_fxung")
