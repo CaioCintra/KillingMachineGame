@@ -1,6 +1,7 @@
 # No script do mundo
 extends Node
 
+var gameOver = false
 var carrinhu = true
 var personagens = []
 var personagemAtual = 0

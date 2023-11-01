@@ -5,7 +5,4 @@ func _on_body_entered(body):
 		body.velocity.y = body.JUMP_VELOCITY
 		body.isHurt = true
 		$sound_damage.play()
-		
-
-		
- 
+		$GameOver.gameOver()

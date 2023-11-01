@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://00lflonhw0d2"]
+
+[ext_resource type="Script" path="res://gameOver.gd" id="1_0a083"]
+[ext_resource type="Theme" uid="uid://bluhsimtf2qix" path="res://levels/themes/pause_menu.tres" id="2_k4mk5"]
+
+[node name="GameOver" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_0a083")
+
+[node name="BG" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_k4mk5")
+color = Color(0.0980392, 0.0980392, 0.0980392, 0.501961)
+
+[node name="menu_gameOver" type="VBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -103.0
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="menu_gameOver"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_k4mk5")
+text = "GAME OVER"
+
+[node name="reset_btn" type="Button" parent="menu_gameOver"]
+layout_mode = 2
+theme = ExtResource("2_k4mk5")
+text = "TRY AGAIN"
+
+[node name="quit_btn" type="Button" parent="menu_gameOver"]
+layout_mode = 2
+theme = ExtResource("2_k4mk5")
+text = "quit"
+
+[node name="som" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="pressed" from="menu_gameOver/reset_btn" to="." method="_on_reset_btn_pressed"]
+[connection signal="pressed" from="menu_gameOver/quit_btn" to="." method="_on_quit_btn_pressed"]

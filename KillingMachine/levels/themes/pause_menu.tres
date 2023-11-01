@@ -21,3 +21,7 @@ Button/styles/focus = SubResource("StyleBoxEmpty_314su")
 Button/styles/hover = SubResource("StyleBoxEmpty_rv8ws")
 Button/styles/normal = SubResource("StyleBoxEmpty_6imov")
 Button/styles/pressed = SubResource("StyleBoxEmpty_vjxqy")
+Label/colors/font_color = Color(1, 0, 0, 1)
+Label/constants/line_spacing = 20
+Label/font_sizes/font_size = 100
+Label/fonts/font = ExtResource("1_ixphx")
