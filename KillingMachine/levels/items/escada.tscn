@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcmmoteodoydr"]
+
+[ext_resource type="Script" path="res://Escada.gd" id="1_8dlwf"]
+[ext_resource type="Texture2D" uid="uid://du8022ga1p8yp" path="res://assets/Sprites/Portas/Escada.png" id="2_tetxy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0pfs"]
+size = Vector2(25, 58)
+
+[node name="Escada" type="Area2D"]
+script = ExtResource("1_8dlwf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tetxy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_u0pfs")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
