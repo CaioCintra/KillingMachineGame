@@ -23,5 +23,16 @@ func _on_reset_btn_pressed():
 	get_tree().reload_current_scene()
 
 
+
 func _on_quit_btn_pressed():
+	get_tree().quit()
+
+
+func _on_touch_reset_pressed():
+	visible = false
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+	
+	
+func _on_touch_quit_pressed():
 	get_tree().quit()

@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxtbgmgs81t2f"]
+
+[ext_resource type="PackedScene" uid="uid://c8ooaxisihy6n" path="res://levels/slot.tscn" id="1_rexp1"]
+
+[node name="Inventory" type="TextureRect"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -600.0
+offset_bottom = 60.0
+grow_horizontal = 0
+
+[node name="container" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -380.0
+offset_bottom = 60.0
+grow_horizontal = 0
+columns = 6
+
+[node name="slot" parent="container" instance=ExtResource("1_rexp1")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="slot2" parent="container" instance=ExtResource("1_rexp1")]
+layout_mode = 2
+
+[node name="slot3" parent="container" instance=ExtResource("1_rexp1")]
+layout_mode = 2
+
+[node name="slot4" parent="container" instance=ExtResource("1_rexp1")]
+layout_mode = 2
+
+[node name="slot5" parent="container" instance=ExtResource("1_rexp1")]
+layout_mode = 2
+
+[node name="slot6" parent="container" instance=ExtResource("1_rexp1")]
+layout_mode = 2

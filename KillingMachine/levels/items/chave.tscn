@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpk5h7stgtlhx"]
+
+[ext_resource type="Script" path="res://levels/items/chave.gd" id="1_p6hy2"]
+[ext_resource type="Texture2D" uid="uid://b7xftwrda7iy3" path="res://assets/Sprites/Power-Ups/Chave.png" id="1_ww3kf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcnp5"]
+size = Vector2(20, 28)
+
+[node name="Chave" type="Area2D"]
+script = ExtResource("1_p6hy2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_lcnp5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ww3kf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

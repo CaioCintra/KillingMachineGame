@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhohkv8pj2rvd"]
+[gd_scene load_steps=6 format=3 uid="uid://bhohkv8pj2rvd"]
 
 [ext_resource type="Theme" uid="uid://bluhsimtf2qix" path="res://levels/themes/pause_menu.tres" id="1_c6bl8"]
 [ext_resource type="Script" path="res://levels/pause_menu.gd" id="1_l0btb"]
@@ -9,9 +9,11 @@ action = &"ui_cancel"
 [sub_resource type="Shortcut" id="Shortcut_83ipo"]
 events = [SubResource("InputEventAction_q64hs")]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oe1ff"]
+size = Vector2(128.39, 20)
+
 [node name="pause_menu" type="CanvasLayer"]
 process_mode = 3
-visible = false
 script = ExtResource("1_l0btb")
 
 [node name="bg_overlay" type="ColorRect" parent="."]
@@ -43,5 +45,21 @@ layout_mode = 2
 theme = ExtResource("1_c6bl8")
 text = "QUIT GAME"
 
+[node name="touch_resume" type="TouchScreenButton" parent="VBoxContainer"]
+position = Vector2(860, 22)
+scale = Vector2(1.83, 1.83)
+shape = SubResource("RectangleShape2D_oe1ff")
+action = "resume_btn"
+visibility_mode = 1
+
+[node name="touch_quit" type="TouchScreenButton" parent="VBoxContainer"]
+position = Vector2(858, 70)
+scale = Vector2(1.83, 1.83)
+shape = SubResource("RectangleShape2D_oe1ff")
+action = "quit_btn"
+visibility_mode = 1
+
 [connection signal="pressed" from="VBoxContainer/resume_btn" to="." method="_on_resume_btn_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit_btn" to="." method="_on_quit_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/touch_resume" to="." method="_on_touch_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/touch_quit" to="." method="_on_touch_quit_pressed"]

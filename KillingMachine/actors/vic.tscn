@@ -186,3 +186,6 @@ hit_from_inside = true
 [node name="Indicador" parent="." instance=ExtResource("10_u78c5")]
 position = Vector2(-2, -33)
 frame_progress = 0.0
+
+[node name="abre_porta" type="RayCast2D" parent="."]
+target_position = Vector2(31, 0)

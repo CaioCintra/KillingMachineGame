@@ -5,6 +5,7 @@ var gameOver = false
 var carrinhu = true
 var personagens = []
 var personagemAtual = 0
+var temChave = false
 
 func _ready():
 	personagens.append(get_node("James"))

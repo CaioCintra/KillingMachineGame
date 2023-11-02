@@ -8,7 +8,9 @@ var is_jumping := false
 var isHurt := false
 var isAttaking := false
 var ativo = false
+var lookingLeft = false
 
+@onready var ui_canvas := $"../ui_canvas" as CanvasLayer
 @onready var animation := $anim as AnimatedSprite2D
 @onready var remote_transform := $remote as RemoteTransform2D
 
@@ -26,6 +28,12 @@ func _physics_process(delta):
 		$Camera.make_current()
 				
 		$Indicador.play("default")
+		
+		var item = $RayCast2D.get_collider()
+		var level = get_parent()
+		if item != null:
+			if (item.name == "PortaChave") and level.temChave :
+				item.queue_free()
 		# Handle Jump.
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
@@ -46,6 +54,14 @@ func _physics_process(delta):
 		var direction = round(Input.get_axis("ui_left", "ui_right"))
 		
 		if direction != 0:
+			if velocity.x >= 0:
+				if lookingLeft == true:
+					$RayCast2D.rotate(3.1415)
+				lookingLeft = false
+			else:
+				if lookingLeft == false:
+					$RayCast2D.rotate(3.1415)	
+				lookingLeft = true
 			velocity.x = direction * SPEED
 			animation.scale.x = direction
 			if !is_jumping:

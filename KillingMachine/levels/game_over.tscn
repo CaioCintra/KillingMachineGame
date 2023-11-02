@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://00lflonhw0d2"]
+[gd_scene load_steps=5 format=3 uid="uid://00lflonhw0d2"]
 
 [ext_resource type="Script" path="res://gameOver.gd" id="1_0a083"]
 [ext_resource type="Theme" uid="uid://bluhsimtf2qix" path="res://levels/themes/pause_menu.tres" id="2_k4mk5"]
 [ext_resource type="AudioStream" uid="uid://bua314tidvpgv" path="res://SFX/Lose.mp3" id="3_pl468"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3tdgl"]
+size = Vector2(128.39, 20)
 
 [node name="GameOver" type="CanvasLayer"]
 process_mode = 3
@@ -43,8 +46,24 @@ layout_mode = 2
 theme = ExtResource("2_k4mk5")
 text = "quit"
 
+[node name="touch_reset" type="TouchScreenButton" parent="menu_gameOver"]
+position = Vector2(850, 133)
+scale = Vector2(1.83, 1.83)
+shape = SubResource("RectangleShape2D_3tdgl")
+action = "reset_btn"
+visibility_mode = 1
+
+[node name="touch_quit" type="TouchScreenButton" parent="menu_gameOver"]
+position = Vector2(849, 183)
+scale = Vector2(1.83, 1.83)
+shape = SubResource("RectangleShape2D_3tdgl")
+action = "quit_btn"
+visibility_mode = 1
+
 [node name="som" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_pl468")
 
 [connection signal="pressed" from="menu_gameOver/reset_btn" to="." method="_on_reset_btn_pressed"]
 [connection signal="pressed" from="menu_gameOver/quit_btn" to="." method="_on_quit_btn_pressed"]
+[connection signal="pressed" from="menu_gameOver/touch_reset" to="." method="_on_touch_reset_pressed"]
+[connection signal="pressed" from="menu_gameOver/touch_quit" to="." method="_on_touch_quit_pressed"]

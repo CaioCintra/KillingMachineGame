@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://0cwevw2cq1fh"]
+
+[ext_resource type="Script" path="res://levels/items/porta_chave.gd" id="1_aoclr"]
+[ext_resource type="Texture2D" uid="uid://blvh3cvwjpqne" path="res://assets/Sprites/Portas/Porta-Chave.png" id="1_shh41"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxyo5"]
+size = Vector2(30, 58)
+
+[node name="PortaChave" type="RigidBody2D" groups=["doors"]]
+collision_layer = 8
+collision_mask = 3
+mass = 0.01
+sleeping = true
+can_sleep = false
+script = ExtResource("1_aoclr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_shh41")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_mxyo5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
