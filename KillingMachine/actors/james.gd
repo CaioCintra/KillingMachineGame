@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -430.0
+const JUMP_VELOCITY = -450.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_jumping := false
@@ -70,7 +70,7 @@ func _physics_process(delta):
 					animation.play("jump")
 				else:
 					animation.play("doublejump")                     
-		elif is_jumping:
+		elif is_jumping or climbing:
 			if !_double_jump:
 				animation.play("jump")
 			else:

@@ -1,21 +1,66 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcmmoteodoydr"]
+[gd_scene load_steps=10 format=3 uid="uid://bcmmoteodoydr"]
 
 [ext_resource type="Script" path="res://Escada.gd" id="1_8dlwf"]
-[ext_resource type="Texture2D" uid="uid://du8022ga1p8yp" path="res://assets/Sprites/Portas/Escada.png" id="2_tetxy"]
+[ext_resource type="Texture2D" uid="uid://hf821m4ihtun" path="res://assets/Sprites/Portas/Vent.png" id="2_cs5v5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0pfs"]
-size = Vector2(25, 58)
+size = Vector2(47, 249)
 
-[node name="Escada" type="Area2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6eh4b"]
+atlas = ExtResource("2_cs5v5")
+region = Rect2(0, 0, 64, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekxrg"]
+atlas = ExtResource("2_cs5v5")
+region = Rect2(64, 0, 64, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g22v3"]
+atlas = ExtResource("2_cs5v5")
+region = Rect2(128, 0, 64, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ijh8"]
+atlas = ExtResource("2_cs5v5")
+region = Rect2(192, 0, 64, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjxb8"]
+atlas = ExtResource("2_cs5v5")
+region = Rect2(256, 0, 64, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0i6s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6eh4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekxrg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g22v3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ijh8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjxb8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Vent" type="Area2D"]
 script = ExtResource("1_8dlwf")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_tetxy")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-0.5, 1)
+position = Vector2(10.5, -94.5)
 shape = SubResource("RectangleShape2D_u0pfs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, -90)
+sprite_frames = SubResource("SpriteFrames_u0i6s")
+autoplay = "default"
+frame_progress = 0.919938
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

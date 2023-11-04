@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://qg2lca8l2ohj"]
+
+[ext_resource type="Script" path="res://Area Fim.gd" id="1_ksgfa"]
+
+[node name="Area Fim" type="Area2D"]
+script = ExtResource("1_ksgfa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=3 uid="uid://3w44v7cfbcwa"]
+
+[ext_resource type="Script" path="res://Intro.gd" id="1_qpk48"]
+[ext_resource type="Texture2D" uid="uid://b48r1e2cx2sxn" path="res://assets/SplashArts/Logo.png" id="1_syj4w"]
+[ext_resource type="Theme" uid="uid://bluhsimtf2qix" path="res://levels/themes/pause_menu.tres" id="2_tni6f"]
+[ext_resource type="AudioStream" uid="uid://d0vhkdlf31716" path="res://SFX/Intro.mp3" id="3_yci4n"]
+
+[sub_resource type="Theme" id="Theme_evhgm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02nim"]
+size = Vector2(122.145, 25.175)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcwvq"]
+size = Vector2(197.67, 23.355)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7c72"]
+size = Vector2(83.48, 24.055)
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_qpk48")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = 120.0
+offset_top = 62.0
+offset_right = 2084.0
+offset_bottom = 645.0
+scale = Vector2(0.485, 0.485)
+theme = SubResource("Theme_evhgm")
+texture = ExtResource("1_syj4w")
+stretch_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = 43.0
+offset_right = 224.0
+offset_bottom = 315.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_tni6f")
+theme_override_font_sizes/font_size = 100
+text = "start"
+
+[node name="start_touch" type="TouchScreenButton" parent="CanvasLayer/VBoxContainer/Start"]
+position = Vector2(220.97, 40)
+scale = Vector2(2.27, 2.27)
+shape = SubResource("RectangleShape2D_02nim")
+
+[node name="controls" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_tni6f")
+theme_override_font_sizes/font_size = 100
+text = "controls
+"
+
+[node name="controls_touch" type="TouchScreenButton" parent="CanvasLayer/VBoxContainer/controls"]
+position = Vector2(220, 38.76)
+scale = Vector2(2.27, 2.27)
+shape = SubResource("RectangleShape2D_xcwvq")
+
+[node name="quit" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_tni6f")
+theme_override_font_sizes/font_size = 100
+text = "quit
+"
+flat = true
+icon_alignment = 1
+
+[node name="quit_touch" type="TouchScreenButton" parent="CanvasLayer/VBoxContainer/quit"]
+position = Vector2(219.13, 39.52)
+scale = Vector2(2.27, 2.27)
+shape = SubResource("RectangleShape2D_x7c72")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_yci4n")
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Start/start_touch" to="." method="_on_start_touch_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/controls/controls_touch" to="." method="_on_controls_touch_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/quit/quit_touch" to="." method="_on_quit_touch_pressed"]

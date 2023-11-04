@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://cb7n4im2l01x6"]
+
+[ext_resource type="Script" path="res://Win.gd" id="1_tjwid"]
+[ext_resource type="Theme" uid="uid://bluhsimtf2qix" path="res://levels/themes/pause_menu.tres" id="2_nc20v"]
+[ext_resource type="AudioStream" uid="uid://sx6wwkv5bhfh" path="res://SFX/Win.mp3" id="3_0oki4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3tdgl"]
+size = Vector2(128.39, 20)
+
+[node name="Win" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_tjwid")
+
+[node name="BG" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_nc20v")
+color = Color(0.0980392, 0.0980392, 0.0980392, 0.501961)
+
+[node name="menu_win" type="VBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -103.0
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="menu_win"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_nc20v")
+text = "you win"
+
+[node name="next_btn" type="Button" parent="menu_win"]
+layout_mode = 2
+theme = ExtResource("2_nc20v")
+text = "next level"
+
+[node name="quit_btn" type="Button" parent="menu_win"]
+layout_mode = 2
+theme = ExtResource("2_nc20v")
+text = "quit"
+
+[node name="touch_next" type="TouchScreenButton" parent="menu_win"]
+position = Vector2(850, 133)
+scale = Vector2(1.83, 1.83)
+shape = SubResource("RectangleShape2D_3tdgl")
+action = "next_btn"
+visibility_mode = 1
+
+[node name="touch_quit" type="TouchScreenButton" parent="menu_win"]
+position = Vector2(849, 183)
+scale = Vector2(1.83, 1.83)
+shape = SubResource("RectangleShape2D_3tdgl")
+action = "quit_btn"
+visibility_mode = 1
+
+[node name="som" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0oki4")
+
+[connection signal="pressed" from="menu_win/next_btn" to="." method="_on_next_btn_pressed"]
+[connection signal="pressed" from="menu_win/next_btn" to="." method="_on_reset_btn_pressed" flags=18]
+[connection signal="pressed" from="menu_win/quit_btn" to="." method="_on_quit_btn_pressed" flags=18]
+[connection signal="pressed" from="menu_win/touch_next" to="." method="_on_touch_next_pressed"]
+[connection signal="pressed" from="menu_win/touch_next" to="." method="_on_touch_reset_pressed" flags=18]
+[connection signal="pressed" from="menu_win/touch_quit" to="." method="_on_touch_quit_pressed" flags=18]

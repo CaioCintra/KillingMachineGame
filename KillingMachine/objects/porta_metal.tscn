@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://clh70830k8gsb"]
+[gd_scene load_steps=6 format=3 uid="uid://clh70830k8gsb"]
 
-[ext_resource type="Texture2D" uid="uid://berinp3ulr710" path="res://assets/Sprites/Portas/Porta-Metal.png" id="1_nlmf3"]
+[ext_resource type="Texture2D" uid="uid://berinp3ulr710" path="res://assets/Sprites/Portas/Porta-Metal.png" id="1_8mmc6"]
+[ext_resource type="Script" path="res://objects/Botao.gd" id="2_qcdd1"]
+[ext_resource type="Texture2D" uid="uid://6nswwqxncequ" path="res://assets/Sprites/Portas/Botao.png" id="3_q8q7c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxyo5"]
 size = Vector2(30, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60hw4"]
+size = Vector2(39, 28)
 
 [node name="PortaMetal" type="RigidBody2D" groups=["doors"]]
 collision_layer = 8
@@ -11,8 +16,22 @@ collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("1_nlmf3")
+texture = ExtResource("1_8mmc6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_mxyo5")
+
+[node name="Botao" type="Area2D" parent="."]
+position = Vector2(152, 3)
+collision_layer = 32
+script = ExtResource("2_qcdd1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Botao"]
+texture = ExtResource("3_q8q7c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Botao"]
+position = Vector2(-0.5, 4)
+shape = SubResource("RectangleShape2D_60hw4")
+
+[connection signal="body_entered" from="Botao" to="Botao" method="_on_body_entered"]

@@ -6,6 +6,7 @@ var carrinhu = true
 var personagens = []
 var personagemAtual = 0
 var temChave = false
+var jogadoresFinalizados = 0
 
 func _ready():
 	personagens.append(get_node("James"))
@@ -15,8 +16,14 @@ func _ready():
 
 	for i in range(personagens.size()):
 		personagens[i].ativo = (i == personagemAtual)
+		
+	
+
 
 func _process(delta):
+	if jogadoresFinalizados == 4:
+		$Win.Win()
+		
 	if Input.is_action_just_pressed("Trocar_personagem"):
 		# Desativar o personagem atual
 		personagens[personagemAtual].ativo = false

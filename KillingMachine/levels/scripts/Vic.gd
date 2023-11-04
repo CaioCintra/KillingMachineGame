@@ -71,7 +71,7 @@ func _physics_process(delta):
 					animation.play("duck-run")
 			else:
 				animation.play("jump")                    
-		elif is_jumping:
+		elif is_jumping or climbing:
 			animation.play("jump")                    
 		else:
 			isRunning = false
