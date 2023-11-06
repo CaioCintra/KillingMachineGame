@@ -47,14 +47,14 @@ theme = ExtResource("2_k4mk5")
 text = "quit"
 
 [node name="touch_reset" type="TouchScreenButton" parent="menu_gameOver"]
-position = Vector2(956.7, 133.44)
+position = Vector2(637.36, 133.44)
 scale = Vector2(1.83, 1.83)
 shape = SubResource("RectangleShape2D_3tdgl")
 action = "reset_btn"
 visibility_mode = 1
 
 [node name="touch_quit" type="TouchScreenButton" parent="menu_gameOver"]
-position = Vector2(955.795, 183)
+position = Vector2(637.36, 183)
 scale = Vector2(1.83, 1.83)
 shape = SubResource("RectangleShape2D_3tdgl")
 action = "quit_btn"
