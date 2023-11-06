@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://sx6wwkv5bhfh" path="res://SFX/Win.mp3" id="3_0oki4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3tdgl"]
-size = Vector2(128.39, 20)
+size = Vector2(151.42, 20)
 
 [node name="Win" type="CanvasLayer"]
 process_mode = 3
@@ -47,14 +47,14 @@ theme = ExtResource("2_nc20v")
 text = "quit"
 
 [node name="touch_next" type="TouchScreenButton" parent="menu_win"]
-position = Vector2(850, 133)
+position = Vector2(954.545, 133)
 scale = Vector2(1.83, 1.83)
 shape = SubResource("RectangleShape2D_3tdgl")
 action = "next_btn"
 visibility_mode = 1
 
 [node name="touch_quit" type="TouchScreenButton" parent="menu_win"]
-position = Vector2(849, 183)
+position = Vector2(954.785, 183)
 scale = Vector2(1.83, 1.83)
 shape = SubResource("RectangleShape2D_3tdgl")
 action = "quit_btn"
@@ -63,9 +63,9 @@ visibility_mode = 1
 [node name="som" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_0oki4")
 
-[connection signal="pressed" from="menu_win/next_btn" to="." method="_on_next_btn_pressed"]
 [connection signal="pressed" from="menu_win/next_btn" to="." method="_on_reset_btn_pressed" flags=18]
+[connection signal="pressed" from="menu_win/next_btn" to="." method="_on_next_btn_pressed"]
 [connection signal="pressed" from="menu_win/quit_btn" to="." method="_on_quit_btn_pressed" flags=18]
-[connection signal="pressed" from="menu_win/touch_next" to="." method="_on_touch_next_pressed"]
 [connection signal="pressed" from="menu_win/touch_next" to="." method="_on_touch_reset_pressed" flags=18]
+[connection signal="pressed" from="menu_win/touch_next" to="." method="_on_touch_next_pressed"]
 [connection signal="pressed" from="menu_win/touch_quit" to="." method="_on_touch_quit_pressed" flags=18]

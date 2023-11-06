@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://6stjpx5fw82e"]
+
+[ext_resource type="PackedScene" uid="uid://3w44v7cfbcwa" path="res://Intro.tscn" id="1_ftx50"]
+
+[node name="Intro" instance=ExtResource("1_ftx50")]
+
+[node name="AudioStreamPlayer" parent="." index="1"]
+autoplay = true

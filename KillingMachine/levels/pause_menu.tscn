@@ -46,14 +46,14 @@ theme = ExtResource("1_c6bl8")
 text = "QUIT GAME"
 
 [node name="touch_resume" type="TouchScreenButton" parent="VBoxContainer"]
-position = Vector2(860, 22)
+position = Vector2(953.875, 22)
 scale = Vector2(1.83, 1.83)
 shape = SubResource("RectangleShape2D_oe1ff")
 action = "resume_btn"
 visibility_mode = 1
 
 [node name="touch_quit" type="TouchScreenButton" parent="VBoxContainer"]
-position = Vector2(858, 70)
+position = Vector2(955.58, 70)
 scale = Vector2(1.83, 1.83)
 shape = SubResource("RectangleShape2D_oe1ff")
 action = "quit_btn"
