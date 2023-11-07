@@ -17,6 +17,7 @@ func _on_next_btn_pressed():
 
 
 func _on_quit_btn_pressed():
+	get_tree().queue_free()
 	get_tree().change_scene_to_file("res://Intro.tscn")
 
 

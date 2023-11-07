@@ -39,12 +39,12 @@ func _physics_process(delta):
 			if (item.name == "PortaChave") and level.temChave :
 				item.queue_free()
 		# Handle Jump.
-		if Input.is_action_just_pressed("jump") and is_on_floor():
+		if Input.is_action_just_pressed("ui_jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 			$sound_jump.play()
 			is_jumping = true
 			
-		elif Input.is_action_just_pressed("power"):
+		elif Input.is_action_just_pressed("ui_power"):
 			isAttaking = true
 			$sound_attack.play()
 			var porta = $RayCast2D.get_collider()

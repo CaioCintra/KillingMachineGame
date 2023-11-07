@@ -88,12 +88,13 @@ frame_progress = 0.828946
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_uu6ig")
 
-[node name="hitbox" parent="." instance=ExtResource("2_fvnkf")]
+[node name="Tiro" type="Marker2D" parent="."]
+position = Vector2(-293, -294)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+[node name="hitbox" parent="Tiro" instance=ExtResource("2_fvnkf")]
+position = Vector2(293, 294)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiro/hitbox"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_v87gg")
 debug_color = Color(1, 0, 0.0980392, 0.419608)
-
-[node name="Tiro" type="Marker2D" parent="."]
-position = Vector2(-293, -294)

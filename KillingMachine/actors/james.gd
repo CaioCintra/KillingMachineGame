@@ -41,7 +41,7 @@ func _physics_process(delta):
 				item.queue_free()
 		
 		# Handle Jump.
-		if (Input.is_action_just_pressed("jump") or Input.is_action_just_pressed("power")) and (is_on_floor() or not _double_jump):
+		if (Input.is_action_just_pressed("ui_jump") or Input.is_action_just_pressed("ui_power")) and (is_on_floor() or not _double_jump):
 			velocity.y = JUMP_VELOCITY
 			$sound_jump.play()
 			is_jumping = true

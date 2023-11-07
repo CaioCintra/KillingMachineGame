@@ -40,13 +40,13 @@ func _physics_process(delta):
 				item.queue_free()
 		
 		# Handle Jump.
-		if Input.is_action_just_pressed("jump") and is_on_floor():
+		if Input.is_action_just_pressed("ui_jump") and is_on_floor():
 			isDucking = false
 			velocity.y = JUMP_VELOCITY
 			$sound_jump.play()
 			is_jumping = true
 	
-		if Input.is_action_just_pressed("power") and is_on_floor() and !blockAbove:
+		if Input.is_action_just_pressed("ui_power") and is_on_floor() and !blockAbove:
 			isDucking = !isDucking
 	
 		# Get the input direction and handle the movement/deceleration.
