@@ -15,7 +15,6 @@ var climbing = false
 
 @onready var ui_canvas := $"../ui_canvas" as CanvasLayer
 @onready var animation := $anim as AnimatedSprite2D
-@onready var remote_transform := $remote as RemoteTransform2D
 
 func _physics_process(delta):
 	if !climbing:
