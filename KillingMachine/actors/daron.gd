@@ -48,7 +48,7 @@ func _physics_process(delta):
 			$sound_attack.play()
 			var porta = $RayCast2D.get_collider()
 			if porta != null:
-				if (porta.name == "PortaVidro") :
+				if "PortaVidro" in porta.name:
 					porta.queue_free()
 			await get_tree().create_timer(0.8).timeout
 			isAttaking = false
