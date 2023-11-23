@@ -22,7 +22,7 @@ func _ready():
 
 func _process(_delta):
 	if jogadoresFinalizados == 4:
-		$Win.Win()
+		$Win.Win("res://levels/world_03.tscn")
 		
 	if Input.is_action_just_pressed("Trocar_personagem"):
 		# Desativar o personagem atual

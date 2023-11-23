@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var SPEED = 300.0
-const JUMP_VELOCITY = -430.0
+var JUMP_VELOCITY = -430.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_jumping := false
@@ -39,7 +39,7 @@ func _physics_process(delta):
 				item.queue_free()
 		
 		# Handle Jump.
-		if Input.is_action_just_pressed("ui_jump") and is_on_floor():
+		if Input.is_action_just_pressed("ui_jump") and is_on_floor() and !blockAbove:
 			isDucking = false
 			velocity.y = JUMP_VELOCITY
 			$sound_jump.play()

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://nncetaekg68k"]
+
+[ext_resource type="Script" path="res://JumpBoost.gd" id="1_q37hc"]
+[ext_resource type="Texture2D" uid="uid://xofmp6e8hwx4" path="res://assets/Sprites/Power-Ups/Jump Boost.png" id="2_3rwl5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_33ntp"]
+radius = 15.0
+
+[node name="JumpBoost" type="Area2D"]
+script = ExtResource("1_q37hc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_3rwl5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_33ntp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
