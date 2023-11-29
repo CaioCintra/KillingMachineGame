@@ -23,6 +23,7 @@ func _on_next_btn_pressed():
 
 func _on_quit_btn_pressed():
 	get_tree().change_scene_to_file("res://Intro.tscn")
+	get_tree().paused = false
 
 
 
@@ -34,3 +35,4 @@ func _on_touch_next_pressed():
 
 func _on_touch_quit_pressed():
 	get_tree().change_scene_to_file("res://Intro.tscn")
+	get_tree().paused = false

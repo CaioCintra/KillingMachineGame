@@ -16,7 +16,7 @@ size = Vector2(197.67, 23.355)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7c72"]
 size = Vector2(83.48, 24.055)
 
-[node name="Intro" type="Node2D"]
+[node name="Intro" type="Node"]
 script = ExtResource("1_qpk48")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -53,56 +53,58 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -224.0
-offset_top = -272.0
-offset_right = 224.0
+offset_left = -218.0
+offset_top = -225.0
+offset_right = 230.0
+offset_bottom = 47.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 4
 
+[node name="start_touch" type="TouchScreenButton" parent="CanvasLayer/VBoxContainer"]
+position = Vector2(217, 23)
+scale = Vector2(2.27, 2.27)
+shape = SubResource("RectangleShape2D_02nim")
+
 [node name="Start" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_tni6f")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 0
 text = "start"
 
-[node name="start_touch" type="TouchScreenButton" parent="CanvasLayer/VBoxContainer/Start"]
-position = Vector2(220.97, 40)
+[node name="controls_touch" type="TouchScreenButton" parent="CanvasLayer/VBoxContainer"]
+position = Vector2(225, 82)
 scale = Vector2(2.27, 2.27)
-shape = SubResource("RectangleShape2D_02nim")
+shape = SubResource("RectangleShape2D_xcwvq")
 
 [node name="controls" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_tni6f")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 60
 text = "controls
 "
 
-[node name="controls_touch" type="TouchScreenButton" parent="CanvasLayer/VBoxContainer/controls"]
-position = Vector2(220, 38.76)
+[node name="quit_touch" type="TouchScreenButton" parent="CanvasLayer/VBoxContainer"]
+position = Vector2(220, 140)
 scale = Vector2(2.27, 2.27)
-shape = SubResource("RectangleShape2D_xcwvq")
+shape = SubResource("RectangleShape2D_x7c72")
 
 [node name="quit" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_tni6f")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 60
 text = "quit
 "
 flat = true
 icon_alignment = 1
 
-[node name="quit_touch" type="TouchScreenButton" parent="CanvasLayer/VBoxContainer/quit"]
-position = Vector2(219.13, 39.52)
-scale = Vector2(2.27, 2.27)
-shape = SubResource("RectangleShape2D_x7c72")
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_yci4n")
+autoplay = true
 
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/Start/start_touch" to="." method="_on_start_touch_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/controls" to="." method="_on_controls_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/controls/controls_touch" to="." method="_on_controls_touch_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/quit/quit_touch" to="." method="_on_quit_touch_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/start_touch" to="." method="_on_start_touch_pressed" flags=18]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Start" to="." method="_on_start_pressed" flags=18]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/controls_touch" to="." method="_on_controls_touch_pressed" flags=18]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/controls" to="." method="_on_controls_pressed" flags=18]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/quit_touch" to="." method="_on_quit_touch_pressed" flags=18]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/quit" to="." method="_on_quit_pressed" flags=18]

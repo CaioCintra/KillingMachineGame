@@ -10,7 +10,7 @@ action = &"ui_cancel"
 events = [SubResource("InputEventAction_q64hs")]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oe1ff"]
-size = Vector2(128.39, 20)
+size = Vector2(183.68, 34.38)
 
 [node name="pause_menu" type="CanvasLayer"]
 process_mode = 3
@@ -46,14 +46,14 @@ theme = ExtResource("1_c6bl8")
 text = "QUIT GAME"
 
 [node name="touch_resume" type="TouchScreenButton" parent="VBoxContainer"]
-position = Vector2(637.36, 22)
+position = Vector2(631, 18)
 scale = Vector2(1.83, 1.83)
 shape = SubResource("RectangleShape2D_oe1ff")
 action = "resume_btn"
 visibility_mode = 1
 
 [node name="touch_quit" type="TouchScreenButton" parent="VBoxContainer"]
-position = Vector2(637.36, 70)
+position = Vector2(631, 86)
 scale = Vector2(1.83, 1.83)
 shape = SubResource("RectangleShape2D_oe1ff")
 action = "quit_btn"

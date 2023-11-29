@@ -1,0 +1,581 @@
+[gd_scene load_steps=69 format=3 uid="uid://b7qvus75rvbve"]
+
+[ext_resource type="Script" path="res://controles.gd" id="1_mm6tr"]
+[ext_resource type="Texture2D" uid="uid://bk7bhtnifgvh3" path="res://assets/Sprites/Personagens/Josh/Josh-idle.png" id="2_n37xm"]
+[ext_resource type="Theme" uid="uid://bluhsimtf2qix" path="res://levels/themes/pause_menu.tres" id="2_whplp"]
+[ext_resource type="Texture2D" uid="uid://dve4rfjjbgnpw" path="res://assets/Sprites/Personagens/Josh/Josh-jump.png" id="3_tl0h0"]
+[ext_resource type="Texture2D" uid="uid://j6koe0662qt2" path="res://assets/Sprites/Personagens/Josh/Josh-run.png" id="4_gyqrj"]
+[ext_resource type="FontFile" uid="uid://dxt38u4guk3kr" path="res://assets/font.ttf" id="5_4fm0b"]
+[ext_resource type="Texture2D" uid="uid://dexordhoxcqh0" path="res://assets/Sprites/Personagens/James/James-doublejump.png" id="6_qkovl"]
+[ext_resource type="Texture2D" uid="uid://dg8eh3wyxyebh" path="res://assets/Sprites/Personagens/James/James-hurt.png" id="7_wdnba"]
+[ext_resource type="Texture2D" uid="uid://c7ppocd86da44" path="res://assets/Sprites/Personagens/James/James-idle.png" id="8_unxvn"]
+[ext_resource type="Texture2D" uid="uid://bvgm2llnsfeh5" path="res://assets/Sprites/Personagens/James/James-jump.png" id="9_ghgj4"]
+[ext_resource type="Texture2D" uid="uid://cgh7q4cchfgp5" path="res://assets/Sprites/Personagens/James/James-run.png" id="10_etvej"]
+[ext_resource type="Texture2D" uid="uid://c651qp1mcg6ta" path="res://assets/Sprites/Personagens/Daron/Daron-attack.png" id="11_mx258"]
+[ext_resource type="Texture2D" uid="uid://ch5vfwkqhixtv" path="res://assets/Sprites/Personagens/Daron/Daron-hurt.png" id="12_e1pw0"]
+[ext_resource type="Texture2D" uid="uid://8if4m2tomuma" path="res://assets/Sprites/Personagens/Daron/Daron-idle.png" id="13_sbipc"]
+[ext_resource type="Texture2D" uid="uid://mus146nbrq8f" path="res://assets/Sprites/Personagens/Daron/Daron-jump.png" id="14_h2fj7"]
+[ext_resource type="Texture2D" uid="uid://gwyl4pbrt1rp" path="res://assets/Sprites/Personagens/Daron/Daron-run.png" id="15_7o60h"]
+[ext_resource type="Texture2D" uid="uid://bmy41hiinv5hf" path="res://assets/Sprites/Personagens/Vic/Vic-duck.png" id="16_jip07"]
+[ext_resource type="Texture2D" uid="uid://c5nblhdwontww" path="res://assets/Sprites/Personagens/Vic/Vic-duck-run.png" id="17_umf38"]
+[ext_resource type="Texture2D" uid="uid://bmo4h7qkbcarl" path="res://assets/Sprites/Personagens/Vic/Vic-hurt.png" id="18_u1qnb"]
+[ext_resource type="Texture2D" uid="uid://dr6wbx8iwbbwe" path="res://assets/Sprites/Personagens/Vic/Vic-idle.png" id="19_1h1q7"]
+[ext_resource type="Texture2D" uid="uid://iu7pixy1uc1u" path="res://assets/Sprites/Personagens/Vic/Vic-jump.png" id="20_ojh2u"]
+[ext_resource type="Texture2D" uid="uid://da5x62gkhdk1" path="res://assets/Sprites/Personagens/Vic/Vic-run.png" id="21_05hj3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12fau"]
+atlas = ExtResource("2_n37xm")
+region = Rect2(0, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24oxr"]
+atlas = ExtResource("2_n37xm")
+region = Rect2(40, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngsdi"]
+atlas = ExtResource("2_n37xm")
+region = Rect2(80, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j34x"]
+atlas = ExtResource("2_n37xm")
+region = Rect2(120, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ruwhm"]
+atlas = ExtResource("3_tl0h0")
+region = Rect2(0, 0, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfcdg"]
+atlas = ExtResource("4_gyqrj")
+region = Rect2(0, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0motv"]
+atlas = ExtResource("4_gyqrj")
+region = Rect2(40, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0omg0"]
+atlas = ExtResource("4_gyqrj")
+region = Rect2(80, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5gii"]
+atlas = ExtResource("4_gyqrj")
+region = Rect2(120, 0, 40, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ptx24"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_12fau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24oxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngsdi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j34x")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ruwhm")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfcdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0motv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0omg0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5gii")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="Theme" id="Theme_dttoi"]
+Label/font_sizes/font_size = 20
+Label/fonts/font = ExtResource("5_4fm0b")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo1p8"]
+atlas = ExtResource("8_unxvn")
+region = Rect2(0, 0, 32, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5g7dn"]
+atlas = ExtResource("8_unxvn")
+region = Rect2(32, 0, 32, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfi3r"]
+atlas = ExtResource("8_unxvn")
+region = Rect2(64, 0, 32, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0m5v"]
+atlas = ExtResource("8_unxvn")
+region = Rect2(96, 0, 32, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30esh"]
+atlas = ExtResource("10_etvej")
+region = Rect2(0, 0, 32, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yd6c"]
+atlas = ExtResource("10_etvej")
+region = Rect2(32, 0, 32, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6qo1"]
+atlas = ExtResource("10_etvej")
+region = Rect2(64, 0, 32, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pq6b"]
+atlas = ExtResource("10_etvej")
+region = Rect2(96, 0, 32, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cvhfi"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("6_qkovl")
+}],
+"loop": true,
+"name": &"doublejump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_wdnba")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_mo1p8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5g7dn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfi3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0m5v")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ghgj4")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30esh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yd6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6qo1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pq6b")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4pj8"]
+atlas = ExtResource("11_mx258")
+region = Rect2(0, 0, 50, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4ms0"]
+atlas = ExtResource("11_mx258")
+region = Rect2(50, 0, 50, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ejmg"]
+atlas = ExtResource("13_sbipc")
+region = Rect2(0, 0, 50, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oeys4"]
+atlas = ExtResource("13_sbipc")
+region = Rect2(50, 0, 50, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f88q2"]
+atlas = ExtResource("13_sbipc")
+region = Rect2(100, 0, 50, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfn6u"]
+atlas = ExtResource("13_sbipc")
+region = Rect2(150, 0, 50, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8eve"]
+atlas = ExtResource("15_7o60h")
+region = Rect2(0, 0, 50, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xn6k3"]
+atlas = ExtResource("15_7o60h")
+region = Rect2(50, 0, 50, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8ddq"]
+atlas = ExtResource("15_7o60h")
+region = Rect2(100, 0, 50, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3np1"]
+atlas = ExtResource("15_7o60h")
+region = Rect2(150, 0, 50, 65)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wscmg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4pj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4ms0")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_e1pw0")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_7ejmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oeys4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f88q2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfn6u")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_h2fj7")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8eve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xn6k3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8ddq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3np1")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rrcu"]
+atlas = ExtResource("17_umf38")
+region = Rect2(0, 0, 50, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cq825"]
+atlas = ExtResource("17_umf38")
+region = Rect2(50, 0, 50, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mseic"]
+atlas = ExtResource("19_1h1q7")
+region = Rect2(0, 0, 50, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3x07"]
+atlas = ExtResource("19_1h1q7")
+region = Rect2(50, 0, 50, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2ulc"]
+atlas = ExtResource("19_1h1q7")
+region = Rect2(100, 0, 50, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4atr"]
+atlas = ExtResource("19_1h1q7")
+region = Rect2(150, 0, 50, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i58ko"]
+atlas = ExtResource("21_05hj3")
+region = Rect2(0, 0, 50, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mb8a"]
+atlas = ExtResource("21_05hj3")
+region = Rect2(50, 0, 50, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tiaw8"]
+atlas = ExtResource("21_05hj3")
+region = Rect2(100, 0, 50, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfkn4"]
+atlas = ExtResource("21_05hj3")
+region = Rect2(150, 0, 50, 55)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xtmmh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_jip07")
+}],
+"loop": true,
+"name": &"duck",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rrcu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cq825")
+}],
+"loop": true,
+"name": &"duck-run",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_u1qnb")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_mseic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3x07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2ulc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4atr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_ojh2u")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i58ko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mb8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tiaw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfkn4")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="Theme" id="Theme_rgaxx"]
+Label/font_sizes/font_size = 26
+Label/fonts/font = ExtResource("5_4fm0b")
+
+[sub_resource type="InputEventAction" id="InputEventAction_q64hs"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_t4hke"]
+events = [SubResource("InputEventAction_q64hs")]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lv2v5"]
+size = Vector2(128.39, 20)
+
+[node name="controles" type="Node"]
+script = ExtResource("1_mm6tr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="bg_overlay" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+layout_direction = 1
+offset_top = 1.0
+offset_bottom = 1.0
+size_flags_horizontal = 6
+size_flags_vertical = 2
+
+[node name="Josh" type="AnimatedSprite2D" parent="CanvasLayer/Panel"]
+position = Vector2(630, 114.5)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ptx24")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Label4" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 2
+offset_left = 520.0
+offset_top = 188.0
+offset_right = 734.0
+offset_bottom = 269.0
+theme = SubResource("Theme_dttoi")
+text = "JOSH: IMORTAL
+ E BATE NOS
+ INIMIGOS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="James" type="AnimatedSprite2D" parent="CanvasLayer/Panel"]
+position = Vector2(155, 112.5)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_cvhfi")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 2
+offset_left = 50.0
+offset_top = 184.0
+offset_right = 264.0
+offset_bottom = 238.0
+theme = SubResource("Theme_dttoi")
+text = "JAMES: PULO 
+DUPLO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Daron" type="AnimatedSprite2D" parent="CanvasLayer/Panel"]
+position = Vector2(314, 109.5)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_wscmg")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 2
+offset_left = 203.0
+offset_top = 184.0
+offset_right = 417.0
+offset_bottom = 238.0
+theme = SubResource("Theme_dttoi")
+text = "DARON: QUEBRAR 
+PAREDES DE VIDRO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Vic" type="AnimatedSprite2D" parent="CanvasLayer/Panel"]
+position = Vector2(472, 120.5)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_xtmmh")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Label3" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 2
+offset_left = 365.0
+offset_top = 196.5
+offset_right = 579.0
+offset_bottom = 223.5
+theme = SubResource("Theme_dttoi")
+text = "VIC: AGACHAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="CanvasLayer"]
+layout_direction = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 106.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel2"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -27.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_rgaxx")
+text = "A/D: MOVIMENTO 							                   SPACE/W: PULO 
+F/G TROCA DE PERSONAGENS      ENTER: USAR PODER"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -59.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="back_btn" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_whplp")
+shortcut = SubResource("Shortcut_t4hke")
+text = "BACK"
+
+[node name="touch_back" type="TouchScreenButton" parent="CanvasLayer/VBoxContainer"]
+position = Vector2(636.36, 47.585)
+scale = Vector2(2.485, 2.485)
+shape = SubResource("RectangleShape2D_lv2v5")
+action = "resume_btn"
+visibility_mode = 1
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/back_btn" to="." method="_on_back_btn_pressed"]
