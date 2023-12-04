@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf5pupttgix0y"]
+
+[ext_resource type="Texture2D" uid="uid://teuc755jrxa8" path="res://assets/Sprites/Inimigos/EspinhosGelo.png" id="1_1a1at"]
+[ext_resource type="PackedScene" uid="uid://d2elklk2278d6" path="res://enemies/hitbox.tscn" id="2_cro5a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_so37p"]
+size = Vector2(32, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3kdw"]
+size = Vector2(32, 8)
+
+[node name="EspinhoGelo" type="CharacterBody2D" groups=["enemies"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_so37p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1a1at")
+
+[node name="hitbox" parent="." instance=ExtResource("2_cro5a")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_f3kdw")

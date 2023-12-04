@@ -136,8 +136,8 @@ size = Vector2(25, 54)
 size = Vector2(31, 40)
 
 [node name="Vic" type="CharacterBody2D" groups=["players"]]
-position = Vector2(3, -28)
-collision_mask = 18
+position = Vector2(-157, -349)
+collision_mask = 26
 script = ExtResource("1_sl84u")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]

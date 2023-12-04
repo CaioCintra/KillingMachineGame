@@ -46,10 +46,16 @@ func _physics_process(delta):
 		elif Input.is_action_just_pressed("ui_power"):
 			isAttaking = true
 			$sound_attack.play()
-			var porta = $RayCast2D.get_collider()
-			if porta != null:
-				if "PortaVidro" in porta.name:
-					porta.queue_free()
+			if !(get_parent().temAmp) :
+				var porta = $RayCast2D.get_collider()
+				if porta != null:
+						if "PortaVidro" in porta.name:
+							porta.queue_free()
+			else:
+				for obj in get_parent().get_children():
+					if "PortaVidro" in obj.name:
+						obj.queue_free()
+						
 			await get_tree().create_timer(0.8).timeout
 			isAttaking = false
 	
