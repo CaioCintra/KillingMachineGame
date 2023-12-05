@@ -191,3 +191,4 @@ frame_progress = 0.0
 
 [node name="abre_porta" type="RayCast2D" parent="."]
 target_position = Vector2(31, 0)
+collision_mask = 9

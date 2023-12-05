@@ -33,6 +33,7 @@ func _physics_process(delta):
 		var item = $RayCast2D.get_collider()
 		var level = get_parent()
 		if item != null:
+			print(item.name)
 			if (item.name == "PortaChave") and level.temChave :
 				item.queue_free()		
 				

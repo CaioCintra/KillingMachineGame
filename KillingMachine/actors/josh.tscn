@@ -138,7 +138,7 @@ position_smoothing_enabled = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(25, 0)
-collision_mask = 4
+collision_mask = 12
 hit_from_inside = true
 
 [node name="Indicador" parent="." instance=ExtResource("7_wgrl5")]
