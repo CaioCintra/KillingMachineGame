@@ -7,6 +7,7 @@ var personagens = []
 var personagemAtual = 0
 var temChave = false
 var temAmp = false
+var temShield = false
 var jogadoresFinalizados = 0
 
 func _ready():
