@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://brow4jdxstx7q"]
+[gd_scene load_steps=70 format=3 uid="uid://brow4jdxstx7q"]
 
 [ext_resource type="Script" path="res://levels/world_02.gd" id="1_cjrcn"]
 [ext_resource type="Texture2D" uid="uid://pwg4465ejfxv" path="res://assets/Sprites/Mapa/Natureza/Canto2.png" id="2_2pq7e"]
@@ -51,6 +51,7 @@
 [ext_resource type="PackedScene" uid="uid://ollhsjfir2ir" path="res://enemies/sandman.tscn" id="41_iod4q"]
 [ext_resource type="PackedScene" uid="uid://ca75m0romvagn" path="res://enemies/Painkiller.tscn" id="42_rocms"]
 [ext_resource type="PackedScene" uid="uid://bcmmoteodoydr" path="res://levels/items/escada.tscn" id="44_o1tm7"]
+[ext_resource type="PackedScene" uid="uid://bjdrgkwphrf4f" path="res://fullscreen.tscn" id="45_f5xwa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2j61"]
 size = Vector2(382, 574)
@@ -696,6 +697,8 @@ offset_top = 21.0
 offset_right = -156.0
 offset_bottom = 81.0
 script = ExtResource("36_y8jss")
+
+[node name="Fullscreen" parent="ui_canvas" instance=ExtResource("45_f5xwa")]
 
 [node name="Win" parent="." instance=ExtResource("37_ewu2t")]
 

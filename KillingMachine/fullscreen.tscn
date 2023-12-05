@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjdrgkwphrf4f"]
+
+[ext_resource type="Script" path="res://fullscreen.gd" id="1_vov0l"]
+
+[node name="Fullscreen" type="Button"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -119.0
+offset_bottom = 31.0
+grow_horizontal = 0
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "Fullscreen (F4)"
+script = ExtResource("1_vov0l")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

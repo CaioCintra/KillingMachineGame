@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cb7n4im2l01x6"]
+[gd_scene load_steps=6 format=3 uid="uid://cb7n4im2l01x6"]
 
 [ext_resource type="Script" path="res://Win.gd" id="1_tjwid"]
 [ext_resource type="Theme" uid="uid://bluhsimtf2qix" path="res://levels/themes/pause_menu.tres" id="2_nc20v"]
 [ext_resource type="AudioStream" uid="uid://sx6wwkv5bhfh" path="res://SFX/Win.mp3" id="3_0oki4"]
+[ext_resource type="PackedScene" uid="uid://bjdrgkwphrf4f" path="res://fullscreen.tscn" id="4_b7nya"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3tdgl"]
 size = Vector2(151.42, 20)
@@ -63,8 +64,10 @@ visibility_mode = 1
 [node name="som" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_0oki4")
 
-[connection signal="pressed" from="menu_win/next_btn" to="." method="_on_next_btn_pressed"]
+[node name="Fullscreen" parent="." instance=ExtResource("4_b7nya")]
+
 [connection signal="pressed" from="menu_win/next_btn" to="." method="_on_reset_btn_pressed" flags=18]
+[connection signal="pressed" from="menu_win/next_btn" to="." method="_on_next_btn_pressed"]
 [connection signal="pressed" from="menu_win/quit_btn" to="." method="_on_quit_btn_pressed" flags=18]
 [connection signal="pressed" from="menu_win/touch_next" to="." method="_on_touch_next_pressed"]
 [connection signal="pressed" from="menu_win/touch_next" to="." method="_on_touch_reset_pressed" flags=18]

@@ -1,11 +1,49 @@
-[gd_scene load_steps=9 format=3 uid="uid://3w44v7cfbcwa"]
+[gd_scene load_steps=16 format=3 uid="uid://3w44v7cfbcwa"]
 
 [ext_resource type="Script" path="res://Intro.gd" id="1_qpk48"]
 [ext_resource type="Texture2D" uid="uid://b48r1e2cx2sxn" path="res://assets/SplashArts/Logo.png" id="1_syj4w"]
 [ext_resource type="Theme" uid="uid://bluhsimtf2qix" path="res://levels/themes/pause_menu.tres" id="2_tni6f"]
 [ext_resource type="AudioStream" uid="uid://d0vhkdlf31716" path="res://SFX/Intro.mp3" id="3_yci4n"]
+[ext_resource type="Texture2D" uid="uid://bad1g60yyxulg" path="res://assets/Sprites/fireBackground.png" id="4_v6inb"]
+[ext_resource type="PackedScene" uid="uid://bjdrgkwphrf4f" path="res://fullscreen.tscn" id="5_vqhlc"]
 
 [sub_resource type="Theme" id="Theme_evhgm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmxw2"]
+atlas = ExtResource("4_v6inb")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljnxb"]
+atlas = ExtResource("4_v6inb")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bshx"]
+atlas = ExtResource("4_v6inb")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw4ke"]
+atlas = ExtResource("4_v6inb")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wani3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmxw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljnxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bshx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw4ke")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02nim"]
 size = Vector2(122.145, 25.175)
@@ -53,18 +91,34 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -218.0
-offset_top = -225.0
-offset_right = 230.0
-offset_bottom = 47.0
+offset_left = -390.0
+offset_top = -203.0
+offset_right = 390.0
+offset_bottom = 69.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 4
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/VBoxContainer"]
+position = Vector2(393, 175)
+scale = Vector2(8.535, 7.24)
+sprite_frames = SubResource("SpriteFrames_wani3")
+autoplay = "default"
+
 [node name="start_touch" type="TouchScreenButton" parent="CanvasLayer/VBoxContainer"]
-position = Vector2(217, 23)
+position = Vector2(385, 18)
 scale = Vector2(2.27, 2.27)
 shape = SubResource("RectangleShape2D_02nim")
+
+[node name="controls_touch" type="TouchScreenButton" parent="CanvasLayer/VBoxContainer"]
+position = Vector2(393, 77)
+scale = Vector2(2.27, 2.27)
+shape = SubResource("RectangleShape2D_xcwvq")
+
+[node name="quit_touch" type="TouchScreenButton" parent="CanvasLayer/VBoxContainer"]
+position = Vector2(388, 135)
+scale = Vector2(2.27, 2.27)
+shape = SubResource("RectangleShape2D_x7c72")
 
 [node name="Start" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
@@ -72,22 +126,12 @@ theme = ExtResource("2_tni6f")
 theme_override_font_sizes/font_size = 0
 text = "start"
 
-[node name="controls_touch" type="TouchScreenButton" parent="CanvasLayer/VBoxContainer"]
-position = Vector2(225, 82)
-scale = Vector2(2.27, 2.27)
-shape = SubResource("RectangleShape2D_xcwvq")
-
 [node name="controls" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_tni6f")
 theme_override_font_sizes/font_size = 60
 text = "controls
 "
-
-[node name="quit_touch" type="TouchScreenButton" parent="CanvasLayer/VBoxContainer"]
-position = Vector2(220, 140)
-scale = Vector2(2.27, 2.27)
-shape = SubResource("RectangleShape2D_x7c72")
 
 [node name="quit" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
@@ -98,13 +142,19 @@ text = "quit
 flat = true
 icon_alignment = 1
 
+[node name="Fullscreen" parent="CanvasLayer/VBoxContainer" instance=ExtResource("5_vqhlc")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_yci4n")
+volume_db = -10.0
 autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/start_touch" to="." method="_on_start_touch_pressed" flags=18]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/Start" to="." method="_on_start_pressed" flags=18]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/controls_touch" to="." method="_on_controls_touch_pressed" flags=18]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/controls" to="." method="_on_controls_pressed" flags=18]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/quit_touch" to="." method="_on_quit_touch_pressed" flags=18]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Start" to="." method="_on_start_pressed" flags=18]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/controls" to="." method="_on_controls_pressed" flags=18]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/quit" to="." method="_on_quit_pressed" flags=18]
