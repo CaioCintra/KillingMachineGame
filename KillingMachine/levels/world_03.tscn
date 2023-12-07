@@ -29,7 +29,6 @@
 [ext_resource type="Shader" path="res://levels/shaders/nuvens.gdshader" id="21_w63if"]
 [ext_resource type="Texture2D" uid="uid://m7x0usmst8n5" path="res://assets/Sprites/Mapa/Deserto/Parallax/Nuvens.png" id="22_fasod"]
 [ext_resource type="Texture2D" uid="uid://1isaheqjryyj" path="res://assets/Sprites/Mapa/Gelo/Parallax/Parallax1.png" id="23_vfyy6"]
-[ext_resource type="AudioStream" uid="uid://dqgb4u48rayqb" path="res://music/Gearhead.mp3" id="24_be0lu"]
 [ext_resource type="PackedScene" uid="uid://bhohkv8pj2rvd" path="res://levels/pause_menu.tscn" id="25_ubuxv"]
 [ext_resource type="PackedScene" uid="uid://00lflonhw0d2" path="res://levels/game_over.tscn" id="26_w45qr"]
 [ext_resource type="Texture2D" uid="uid://b1qlv8lb024ag" path="res://assets/Sprites/Botões/change.png" id="27_rrau0"]
@@ -39,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://cffjitdv3jush" path="res://assets/Sprites/Botões/left1.png" id="31_j5qt8"]
 [ext_resource type="Texture2D" uid="uid://de6hboh2btes1" path="res://assets/Sprites/Botões/left2.png" id="32_ohb3c"]
 [ext_resource type="Texture2D" uid="uid://dxw0kmasdvkh3" path="res://assets/Sprites/Botões/power.png" id="33_7jq42"]
+[ext_resource type="AudioStream" uid="uid://03rcluktevsd" path="res://music/Exhilarate.mp3" id="33_f4m4f"]
 [ext_resource type="Texture2D" uid="uid://res12ihg71" path="res://assets/Sprites/Botões/power2.png" id="34_pqf3c"]
 [ext_resource type="Texture2D" uid="uid://djxf8upfwn8ya" path="res://assets/Sprites/Botões/Pulo1.png" id="35_yp4w1"]
 [ext_resource type="Texture2D" uid="uid://css0cye5g4g2u" path="res://assets/Sprites/Botões/Pulo2.png" id="36_o5rqi"]
@@ -769,8 +769,8 @@ position = Vector2(-42, -365)
 position = Vector2(-205, -620)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("24_be0lu")
-volume_db = -15.0
+stream = ExtResource("33_f4m4f")
+volume_db = -20.538
 autoplay = true
 
 [node name="pause_menu" parent="." instance=ExtResource("25_ubuxv")]

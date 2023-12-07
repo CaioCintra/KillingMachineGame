@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://b4q7slishfty6"]
+
+[ext_resource type="Script" path="res://enemies/puppe.gd" id="1_18x21"]
+[ext_resource type="Texture2D" uid="uid://i1plki7alx6m" path="res://assets/Sprites/Inimigos/Puppe.png" id="1_gqyow"]
+[ext_resource type="PackedScene" uid="uid://d2elklk2278d6" path="res://enemies/hitbox.tscn" id="3_t4blf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0axi"]
+atlas = ExtResource("1_gqyow")
+region = Rect2(0, 0, 40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th0jd"]
+atlas = ExtResource("1_gqyow")
+region = Rect2(40, 0, 40, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5rdeg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0axi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_th0jd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocq2m"]
+size = Vector2(23, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uah0b"]
+size = Vector2(31, 56)
+
+[node name="Puppe" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("1_18x21")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5rdeg")
+autoplay = "default"
+frame_progress = 0.597177
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_ocq2m")
+
+[node name="hitbox" parent="." instance=ExtResource("3_t4blf")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_uah0b")
+debug_color = Color(1, 0, 0.109804, 0.419608)

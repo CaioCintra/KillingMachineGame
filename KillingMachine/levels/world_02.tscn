@@ -30,7 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://00lflonhw0d2" path="res://levels/game_over.tscn" id="21_l3yo5"]
 [ext_resource type="Texture2D" uid="uid://b1qlv8lb024ag" path="res://assets/Sprites/Botões/change.png" id="22_68dq0"]
 [ext_resource type="Texture2D" uid="uid://b7nnleum2c0y7" path="res://assets/Sprites/Botões/change2.png" id="23_usytx"]
-[ext_resource type="AudioStream" uid="uid://dqgb4u48rayqb" path="res://music/Gearhead.mp3" id="24_j3404"]
+[ext_resource type="AudioStream" uid="uid://cwr0asr4mop3o" path="res://music/Gearhead.mp3" id="24_j3404"]
 [ext_resource type="Texture2D" uid="uid://401vg8wtqdl8" path="res://assets/Sprites/Botões/right1.png" id="24_tdfwu"]
 [ext_resource type="Texture2D" uid="uid://raewb33lisii" path="res://assets/Sprites/Botões/right2.png" id="25_j0hgk"]
 [ext_resource type="Texture2D" uid="uid://cffjitdv3jush" path="res://assets/Sprites/Botões/left1.png" id="26_ik0gw"]

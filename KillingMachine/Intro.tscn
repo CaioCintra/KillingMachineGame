@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://3w44v7cfbcwa"]
+[gd_scene load_steps=23 format=3 uid="uid://3w44v7cfbcwa"]
 
 [ext_resource type="Script" path="res://Intro.gd" id="1_qpk48"]
 [ext_resource type="Texture2D" uid="uid://b48r1e2cx2sxn" path="res://assets/SplashArts/Logo.png" id="1_syj4w"]
 [ext_resource type="Theme" uid="uid://bluhsimtf2qix" path="res://levels/themes/pause_menu.tres" id="2_tni6f"]
 [ext_resource type="AudioStream" uid="uid://d0vhkdlf31716" path="res://SFX/Intro.mp3" id="3_yci4n"]
+[ext_resource type="Texture2D" uid="uid://ov37uvdhm01a" path="res://assets/Sprites/logo_gamepad_80x80.png" id="4_eg42p"]
 [ext_resource type="Texture2D" uid="uid://bad1g60yyxulg" path="res://assets/Sprites/fireBackground.png" id="4_v6inb"]
 [ext_resource type="PackedScene" uid="uid://bjdrgkwphrf4f" path="res://fullscreen.tscn" id="5_vqhlc"]
 
@@ -43,6 +44,49 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lua5"]
+atlas = ExtResource("4_eg42p")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0snjf"]
+atlas = ExtResource("4_eg42p")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsejg"]
+atlas = ExtResource("4_eg42p")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8h0v3"]
+atlas = ExtResource("4_eg42p")
+region = Rect2(240, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwqmf"]
+atlas = ExtResource("4_eg42p")
+region = Rect2(320, 0, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_brb0r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lua5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0snjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsejg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8h0v3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwqmf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02nim"]
@@ -103,6 +147,12 @@ size_flags_vertical = 4
 position = Vector2(393, 175)
 scale = Vector2(8.535, 7.24)
 sprite_frames = SubResource("SpriteFrames_wani3")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer/VBoxContainer"]
+position = Vector2(39, 167)
+scale = Vector2(0.8, 0.679)
+sprite_frames = SubResource("SpriteFrames_brb0r")
 autoplay = "default"
 
 [node name="start_touch" type="TouchScreenButton" parent="CanvasLayer/VBoxContainer"]
