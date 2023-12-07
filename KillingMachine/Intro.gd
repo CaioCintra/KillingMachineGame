@@ -13,6 +13,9 @@ func _on_start_pressed():
 func _on_controls_pressed():
 	get_tree().change_scene_to_file("res://controles.tscn")
 	menu.queue_free()
+	
+
+
 
 func _on_quit_pressed():
 	get_tree().quit()
@@ -26,7 +29,17 @@ func _on_start_touch_pressed():
 func _on_controls_touch_pressed():
 	get_tree().change_scene_to_file("res://controles.tscn")
 	menu.queue_free()
+	
 
 
 func _on_quit_touch_pressed():
 	get_tree().quit()
+
+func _on_credits_pressed():
+	get_tree().change_scene_to_file("res://creditos.tscn")
+	menu.queue_free()
+
+
+func _on_credits_touch_pressed():
+	get_tree().change_scene_to_file("res://creditos.tscn")
+	menu.queue_free()

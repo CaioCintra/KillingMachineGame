@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bjdrgkwphrf4f" path="res://fullscreen.tscn" id="4_djyha"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3tdgl"]
-size = Vector2(185.65, 39.495)
+size = Vector2(231.09, 38.335)
 
 [node name="GameOver" type="CanvasLayer"]
 process_mode = 3
@@ -48,14 +48,14 @@ theme = ExtResource("2_k4mk5")
 text = "quit"
 
 [node name="touch_reset" type="TouchScreenButton" parent="menu_gameOver"]
-position = Vector2(633, 84)
+position = Vector2(635, 101)
 scale = Vector2(1.83, 1.83)
 shape = SubResource("RectangleShape2D_3tdgl")
 action = "reset_btn"
 visibility_mode = 1
 
 [node name="touch_quit" type="TouchScreenButton" parent="menu_gameOver"]
-position = Vector2(633, 160)
+position = Vector2(633, 197)
 scale = Vector2(1.83, 1.83)
 shape = SubResource("RectangleShape2D_3tdgl")
 action = "quit_btn"

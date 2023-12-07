@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://clh70830k8gsb"]
+[gd_scene load_steps=7 format=3 uid="uid://clh70830k8gsb"]
 
 [ext_resource type="Texture2D" uid="uid://berinp3ulr710" path="res://assets/Sprites/Portas/Porta-Metal.png" id="1_8mmc6"]
 [ext_resource type="Script" path="res://objects/Botao.gd" id="2_qcdd1"]
 [ext_resource type="Texture2D" uid="uid://6nswwqxncequ" path="res://assets/Sprites/Portas/Botao.png" id="3_q8q7c"]
+[ext_resource type="AudioStream" uid="uid://die413dt1gglj" path="res://SFX/click.mp3" id="4_obxhv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxyo5"]
 size = Vector2(30, 58)
@@ -33,5 +34,9 @@ texture = ExtResource("3_q8q7c")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Botao"]
 position = Vector2(-0.5, 4)
 shape = SubResource("RectangleShape2D_60hw4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Botao"]
+stream = ExtResource("4_obxhv")
+volume_db = 13.539
 
 [connection signal="body_entered" from="Botao" to="Botao" method="_on_body_entered"]

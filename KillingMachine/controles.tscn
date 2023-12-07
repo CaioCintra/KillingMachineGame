@@ -445,13 +445,15 @@ color = Color(0, 0, 0, 1)
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 layout_direction = 1
-offset_top = 1.0
-offset_bottom = 1.0
+offset_left = 242.0
+offset_top = 70.0
+offset_right = 242.0
+offset_bottom = 70.0
 size_flags_horizontal = 6
 size_flags_vertical = 2
 
 [node name="Josh" type="AnimatedSprite2D" parent="CanvasLayer/Panel"]
-position = Vector2(630, 114.5)
+position = Vector2(863, 118)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ptx24")
 animation = &"idle"
@@ -459,10 +461,11 @@ autoplay = "idle"
 
 [node name="Label4" type="Label" parent="CanvasLayer/Panel"]
 layout_mode = 2
-offset_left = 520.0
-offset_top = 188.0
-offset_right = 734.0
-offset_bottom = 269.0
+offset_left = 650.0
+offset_top = 184.0
+offset_right = 864.0
+offset_bottom = 265.0
+scale = Vector2(2, 2)
 theme = SubResource("Theme_dttoi")
 text = "JOSH: IMORTAL
  E BATE NOS
@@ -471,7 +474,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="James" type="AnimatedSprite2D" parent="CanvasLayer/Panel"]
-position = Vector2(155, 112.5)
+position = Vector2(-2, 109.5)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_cvhfi")
 animation = &"idle"
@@ -479,10 +482,10 @@ autoplay = "idle"
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel"]
 layout_mode = 2
-offset_left = 50.0
-offset_top = 184.0
-offset_right = 264.0
-offset_bottom = 238.0
+offset_left = -214.0
+offset_top = 177.5
+offset_bottom = 231.5
+scale = Vector2(2, 2)
 theme = SubResource("Theme_dttoi")
 text = "JAMES: PULO 
 DUPLO"
@@ -490,18 +493,18 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Daron" type="AnimatedSprite2D" parent="CanvasLayer/Panel"]
-position = Vector2(314, 109.5)
+position = Vector2(298, 113)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_wscmg")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="Label2" type="Label" parent="CanvasLayer/Panel"]
-layout_mode = 2
-offset_left = 203.0
-offset_top = 184.0
-offset_right = 417.0
-offset_bottom = 238.0
+offset_left = 76.0
+offset_top = 178.5
+offset_right = 290.0
+offset_bottom = 232.5
+scale = Vector2(2, 2)
 theme = SubResource("Theme_dttoi")
 text = "DARON: QUEBRAR 
 PAREDES DE VIDRO"
@@ -509,7 +512,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Vic" type="AnimatedSprite2D" parent="CanvasLayer/Panel"]
-position = Vector2(472, 120.5)
+position = Vector2(590, 121)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_xtmmh")
 animation = &"idle"
@@ -521,6 +524,7 @@ offset_left = 365.0
 offset_top = 196.5
 offset_right = 579.0
 offset_bottom = 223.5
+scale = Vector2(2, 2)
 theme = SubResource("Theme_dttoi")
 text = "VIC: AGACHAR"
 horizontal_alignment = 1
@@ -572,7 +576,7 @@ shortcut = SubResource("Shortcut_t4hke")
 text = "BACK"
 
 [node name="touch_back" type="TouchScreenButton" parent="CanvasLayer/VBoxContainer"]
-position = Vector2(636.36, 47.585)
+position = Vector2(644, 37)
 scale = Vector2(2.485, 2.485)
 shape = SubResource("RectangleShape2D_lv2v5")
 action = "resume_btn"

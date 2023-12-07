@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://kjek5fvr5fch"]
+[gd_scene load_steps=32 format=3 uid="uid://kjek5fvr5fch"]
 
 [ext_resource type="Texture2D" uid="uid://ch5vfwkqhixtv" path="res://assets/Sprites/Personagens/Daron/Daron-hurt.png" id="1_muq2t"]
 [ext_resource type="Script" path="res://actors/daron.gd" id="1_ymvmp"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://dpsi1p5vtokq5" path="res://actors/indicador.tscn" id="9_i7hy1"]
 [ext_resource type="AudioStream" uid="uid://ctx5ky0afa2uu" path="res://SFX/Attack3.mp3" id="10_cdmxx"]
 [ext_resource type="AudioStream" uid="uid://c80ss5ynwn3k6" path="res://SFX/Attack4.mp3" id="11_53roi"]
+[ext_resource type="AudioStream" uid="uid://ohiexwb40vfy" path="res://SFX/glass.mp3" id="14_ax8x3"]
+[ext_resource type="Texture2D" uid="uid://07u3qww8ecew" path="res://assets/Sprites/Portas/glass.png" id="15_e78py"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u4pj8"]
 atlas = ExtResource("2_od7of")
@@ -136,6 +138,30 @@ stream_2/weight = 1.0
 stream_3/stream = ExtResource("11_53roi")
 stream_3/weight = 1.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_1bufd"]
+streams_count = 1
+random_pitch = 1.21
+random_volume_offset_db = 0.0
+stream_0/stream = ExtResource("14_ax8x3")
+stream_0/weight = 1.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8pfk4"]
+lifetime_randomness = 0.05
+emission_shape = 2
+emission_sphere_radius = 1.0
+spread = 127.36
+flatness = 0.37
+gravity = Vector3(0, 98, 0)
+linear_accel_min = 47.18
+linear_accel_max = 100.0
+radial_accel_min = 24.62
+radial_accel_max = 100.0
+angle_min = 291.8
+angle_max = 301.2
+turbulence_enabled = true
+turbulence_noise_strength = 15.49
+turbulence_noise_scale = 6.72
+
 [node name="Daron" type="CharacterBody2D" groups=["players"]]
 collision_mask = 18
 script = ExtResource("1_ymvmp")
@@ -165,6 +191,10 @@ stream = ExtResource("7_5d81f")
 stream = SubResource("AudioStreamRandomizer_5gf6e")
 volume_db = -3.0
 
+[node name="glass" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_1bufd")
+volume_db = -2.552
+
 [node name="Camera" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 limit_left = 0
@@ -180,3 +210,17 @@ hit_from_inside = true
 [node name="Indicador" parent="." instance=ExtResource("9_i7hy1")]
 position = Vector2(-1, -40)
 frame_progress = 0.0
+
+[node name="vidro" type="GPUParticles2D" parent="."]
+position = Vector2(44, -27)
+emitting = false
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_8pfk4")
+texture = ExtResource("15_e78py")
+lifetime = 1.5
+one_shot = true
+preprocess = 300.0
+speed_scale = 4.15
+explosiveness = 1.0
+randomness = 1.0
+collision_base_size = 66.85

@@ -124,16 +124,16 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cq631"]
-size = Vector2(26, 54)
+size = Vector2(32, 54)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jio25"]
-size = Vector2(28, 38)
+size = Vector2(32, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nnhwc"]
-size = Vector2(25, 54)
+size = Vector2(31, 54)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wxiwe"]
-size = Vector2(31, 40)
+size = Vector2(32, 38)
 
 [node name="Vic" type="CharacterBody2D" groups=["players"]]
 position = Vector2(-157, -349)
@@ -147,12 +147,11 @@ animation = &"duck"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, 0)
 shape = SubResource("RectangleShape2D_cq631")
 one_way_collision_margin = 0.0
 
 [node name="CollisionDuck" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 9)
+position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_jio25")
 debug_color = Color(0.517647, 0.576471, 0, 0.419608)
 
@@ -168,12 +167,12 @@ position_smoothing_enabled = true
 [node name="hurtbox" parent="." instance=ExtResource("5_sh2tj")]
 
 [node name="CollisionHurt" type="CollisionShape2D" parent="hurtbox"]
-position = Vector2(-2.5, 1)
+position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_nnhwc")
 debug_color = Color(1, 0, 0.137255, 0.419608)
 
 [node name="CollisionDuckHit" type="CollisionShape2D" parent="hurtbox"]
-position = Vector2(0.5, 8)
+position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_wxiwe")
 debug_color = Color(0.815686, 0.407843, 0, 0.419608)
 
