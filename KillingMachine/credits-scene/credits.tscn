@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ct4dek63v5j5j"]
+[gd_scene load_steps=14 format=3 uid="uid://ct4dek63v5j5j"]
 
 [ext_resource type="Script" path="res://credits-scene/credits.gd" id="1_3jpn6"]
 [ext_resource type="Texture2D" uid="uid://tsln7dwid0dq" path="res://credits-scene/exampleTitle.png" id="2_xutvm"]
@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://bluhsimtf2qix" path="res://levels/themes/pause_menu.tres" id="4_fxv7t"]
 [ext_resource type="AudioStream" uid="uid://boe73k1qcaws6" path="res://music/lord-of-the-riffs-138993.mp3" id="4_r05om"]
 [ext_resource type="FontFile" uid="uid://dxt38u4guk3kr" path="res://assets/font.ttf" id="5_6j87d"]
+[ext_resource type="PackedScene" uid="uid://bjdrgkwphrf4f" path="res://fullscreen.tscn" id="7_pf66o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wmxw2"]
 atlas = ExtResource("3_tnkv3")
@@ -55,8 +56,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3jpn6")
 creditsFile = "res://credits-scene/example-CREDITS"
-titleImage = ExtResource("2_xutvm")
-destroyOnEnd = true
 
 [node name="background" type="ColorRect" parent="."]
 layout_mode = 0
@@ -117,6 +116,25 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 stretch_mode = 5
+
+[node name="background2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -491.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ExampleTitle" type="Sprite2D" parent="."]
+position = Vector2(680, 132)
+texture = ExtResource("2_xutvm")
+
+[node name="Fullscreen" parent="." instance=ExtResource("7_pf66o")]
+layout_mode = 1
+size_flags_horizontal = 8
+size_flags_vertical = 8
 
 [connection signal="finished" from="backgroundVideo" to="." method="_on_backgroundVideo_finished"]
 [connection signal="finished" from="musicPlayer" to="." method="_on_musicPlayer_finished"]
