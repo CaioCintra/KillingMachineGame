@@ -36,10 +36,10 @@ func _on_quit_touch_pressed():
 	get_tree().quit()
 
 func _on_credits_pressed():
-	get_tree().change_scene_to_file("res://creditos.tscn")
+	get_tree().change_scene_to_file("res://credits-scene/credits.tscn")
 	menu.queue_free()
 
 
 func _on_credits_touch_pressed():
-	get_tree().change_scene_to_file("res://creditos.tscn")
+	get_tree().change_scene_to_file("res://credits-scene/credits.tscn")
 	menu.queue_free()

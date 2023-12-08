@@ -51,13 +51,11 @@ func _physics_process(delta):
 				if porta != null:
 						if "PortaVidro" in porta.name:
 							$glass.play()
-							porta.get_node("vidro").emitting = true
 							porta.queue_free()
 			else:
 				for obj in get_parent().get_children():
 					if "PortaVidro" in obj.name:
 						$glass.play()
-						obj.get_node("vidro").emitting = true
 						obj.queue_free()
 						
 			await get_tree().create_timer(0.8).timeout

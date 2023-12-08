@@ -1,0 +1,124 @@
+[gd_scene load_steps=13 format=3 uid="uid://ct4dek63v5j5j"]
+
+[ext_resource type="Script" path="res://credits-scene/credits.gd" id="1_3jpn6"]
+[ext_resource type="Texture2D" uid="uid://tsln7dwid0dq" path="res://credits-scene/exampleTitle.png" id="2_xutvm"]
+[ext_resource type="Texture2D" uid="uid://bad1g60yyxulg" path="res://assets/Sprites/fireBackground.png" id="3_tnkv3"]
+[ext_resource type="Theme" uid="uid://bluhsimtf2qix" path="res://levels/themes/pause_menu.tres" id="4_fxv7t"]
+[ext_resource type="AudioStream" uid="uid://boe73k1qcaws6" path="res://music/lord-of-the-riffs-138993.mp3" id="4_r05om"]
+[ext_resource type="FontFile" uid="uid://dxt38u4guk3kr" path="res://assets/font.ttf" id="5_6j87d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmxw2"]
+atlas = ExtResource("3_tnkv3")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljnxb"]
+atlas = ExtResource("3_tnkv3")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bshx"]
+atlas = ExtResource("3_tnkv3")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw4ke"]
+atlas = ExtResource("3_tnkv3")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6un3n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmxw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljnxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bshx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw4ke")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gr6my"]
+size = Vector2(128.39, 20)
+
+[node name="credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3jpn6")
+creditsFile = "res://credits-scene/example-CREDITS"
+titleImage = ExtResource("2_xutvm")
+destroyOnEnd = true
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(610, 627)
+scale = Vector2(15.565, 13.203)
+sprite_frames = SubResource("SpriteFrames_6un3n")
+autoplay = "default"
+
+[node name="backgroundVideo" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand = true
+
+[node name="musicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_r05om")
+volume_db = -15.45
+autoplay = true
+
+[node name="menu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("4_fxv7t")
+theme_override_fonts/font = ExtResource("5_6j87d")
+theme_override_font_sizes/font_size = 40
+text = "Menu"
+
+[node name="touch_back" type="TouchScreenButton" parent="menu"]
+position = Vector2(100, 14)
+scale = Vector2(1.735, 1.735)
+shape = SubResource("RectangleShape2D_gr6my")
+action = "resume_btn"
+visibility_mode = 1
+
+[node name="scrollingContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="titleImg" type="TextureRect" parent="scrollingContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+stretch_mode = 5
+
+[connection signal="finished" from="backgroundVideo" to="." method="_on_backgroundVideo_finished"]
+[connection signal="finished" from="musicPlayer" to="." method="_on_musicPlayer_finished"]
+[connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="menu/touch_back" to="." method="_on_touch_back_pressed"]

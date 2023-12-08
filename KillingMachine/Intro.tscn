@@ -133,7 +133,7 @@ theme = SubResource("Theme_evhgm")
 texture = ExtResource("1_syj4w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
-position = Vector2(643, 600)
+position = Vector2(658, 600)
 scale = Vector2(14.1, 11.961)
 sprite_frames = SubResource("SpriteFrames_wani3")
 autoplay = "default"
@@ -223,6 +223,6 @@ autoplay = true
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/quit_touch" to="." method="_on_quit_touch_pressed" flags=18]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Start" to="." method="_on_start_pressed" flags=18]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/controls" to="." method="_on_controls_pressed" flags=18]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/credits" to="." method="_on_controls_pressed" flags=18]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/credits" to="." method="_on_controls_pressed" flags=18]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/quit" to="." method="_on_quit_pressed" flags=18]
